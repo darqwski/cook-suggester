@@ -1,0 +1,29 @@
+body, #react-app, html {
+    height: 100%;
+    min-height: 100%;
+    background: #FAFAFA;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.value-desc {
+    display: flex;
+    align-items: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.value-desc > .value {
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    flex-grow: 1;
+}
+.value-desc > .desc {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-right: 0.5rem;
+    color: #666666;
+    text-align: right;
+}

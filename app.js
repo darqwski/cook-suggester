@@ -2,11 +2,10 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 var bodyParser = require('body-parser')
 
-const landingPageRouter = require('./routes/landing-page');
-const tagsPageRouter = require('./routes/tags-page');
+const landingPageRouter = require('./routes/pages/landing-page');
+const apiIngredients = require('./routes/api/ingredients');
 
 const app = express();
 
@@ -14,7 +13,6 @@ const app = express();
 app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
   extended: true
@@ -24,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/img')));
 
 app.use('/', landingPageRouter);
-app.use('/', tagsPageRouter);
+app.use('/', apiIngredients);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

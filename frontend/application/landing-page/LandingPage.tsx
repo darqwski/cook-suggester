@@ -1,102 +1,89 @@
-import React, { useEffect, useState } from "react";
-import { getRecipes } from "../../utils/tasty-api";
+import React, { useEffect, useMemo, useState } from "react";
 import "./landing-page.less";
-import RecipeStory from "./RecipeStory";
+import appRequest from "../../utils/app-request";
 
-export interface IRecipeComponent {
-  raw_text: string;
-}
-
-export interface IRecipeSection {
-  components: IRecipeComponent[];
-}
-export interface IRecipe {
-  sections?: IRecipeSection[];
-  recipes?: IRecipe[];
-  thumbnail_url: string;
+export interface IIngredient {
   name: string;
+  category: string;
+  id: number;
 }
 
-export interface IRecipeStory {
-  name: string;
-  img: string;
-  ingredients: string[];
-}
-
-const parseRecipes = (groupedRecipes: IRecipe[]): IRecipeStory[] => {
-  const recipes = groupedRecipes.flatMap((groupedRecipe) => {
-    if (groupedRecipe.recipes) {
-      return groupedRecipe.recipes;
-    }
-    return [groupedRecipe];
+const fetchBasicIngredientsList = async (): Promise<IIngredient[]> => {
+  const result = await appRequest<IIngredient[]>({
+    url: "API/ingredients/",
   });
 
-  const recipeStories: IRecipeStory[] = [];
-
-  recipes.forEach((recipe) => {
-    const { sections, thumbnail_url, name } = recipe;
-
-    if (!sections) {
-      return;
-    }
-
-    const recipeStory: IRecipeStory = {
-      img: thumbnail_url,
-      name,
-      ingredients: [],
-    };
-
-    sections.forEach((section) => {
-      section.components.forEach((component) => {
-        recipeStory.ingredients.push(component.raw_text);
-      });
-    });
-
-    recipeStories.push(recipeStory);
-  });
-
-  return recipeStories;
+  return result.data;
 };
 
 const LandingPage: React.FC = () => {
-  const [page, setPage] = useState(0);
-  const [recipeIndex, setRecipeIndex] = useState(0);
-  const [recipeStories, setRecipeStories] = useState<IRecipeStory[]>([]);
+  const [ingredients, setIngredients] = useState<IIngredient[]>([]);
+  const [isIngredientsLoading, setIngredientsLoading] = useState(true);
+  const [selectedIngredients, setSelectedIngredients] = useState<IIngredient[]>(
+    []
+  );
+  const [ingredientNameInput, setIngredientNameInput] = useState("");
 
   useEffect(() => {
-    getRecipes(page).then((recipes) => {
-      console.log({ recipes });
-      const parsedRecipes = parseRecipes(recipes);
-      console.log({ parsedRecipes });
-      setRecipeStories((prevState) => [...prevState, ...parsedRecipes]);
-    });
-  }, [page]);
+    fetchBasicIngredientsList()
+      .then(setIngredients)
+      .then(() => setIngredientsLoading(false));
+  }, []);
 
-  useEffect(() => {
-    if (recipeIndex + 1 >= recipeStories.length && recipeStories.length !== 0) {
-      setPage((i) => i + 1);
-    }
-  }, [recipeIndex]);
-  console.log({ recipeStories });
-  const currentRecipe = recipeStories[recipeIndex];
+  const filteredIngredients = useMemo(
+    () =>
+      ingredients.filter(
+        (ingredient) =>
+            ingredientNameInput !== '' &&(
+          ingredient.name?.includes(ingredientNameInput) ||
+          ingredient.category?.includes(ingredientNameInput))
+      ),
+    [ingredientNameInput, ingredients]
+  );
 
-  console.log(currentRecipe)
-  return currentRecipe ? (
-    <div className="story-container" >
-      {recipeIndex > 0 && (
-        <div className="story-container__arrow-left" onClick={() => setRecipeIndex((i) => i - 1)}>
-          <i className="material-icons">arrow_back</i>
+  const selectIngredient = (ingredient: IIngredient) => {
+    setSelectedIngredients(prevIngredients=> [ingredient, ...prevIngredients, ]);
+    setIngredients(prevIngredients=>prevIngredients.filter(prevIngredient =>prevIngredient.id !== ingredient.id))
+  }
+
+  console.log({ingredients,filteredIngredients })
+
+  return (
+    <div>
+      <h3>Welcome in cook suggester</h3>
+      <p>Please add ingredients: </p>
+      <div style={{display:'flex'}}>
+        <div style={{ flexGrow: "1" }}>
+          <p>
+            <input placeholder="Start typing to filter ingredients..." onChange={(event => setIngredientNameInput(event.target.value))} />
+          </p>
+          <div>
+            {filteredIngredients.map((filteredIngredient) => (
+                <div style={{cursor:'pointer'}} onClick={() => selectIngredient(filteredIngredient)}>
+                  <p>{filteredIngredient.name}</p>
+                  <p style={{fontSize:'0.75rem'}}>{filteredIngredient.name}</p>
+                </div>
+            ))}
+          </div>
         </div>
-      )}
-      {currentRecipe && <RecipeStory currentRecipe={currentRecipe} />}
-      {recipeIndex < recipeStories.length && (
-        <div className="story-container__arrow-right" onClick={() => setRecipeIndex((i) => i + 1)}>
-        <i className="material-icons">arrow_forward</i>
+        <div style={{ flexGrow: "1"}}>
+          <div>
+            <p>Your ingredients</p>
+          </div>
+          {selectedIngredients.length !== 0 && <div>
+            <button>Suggest meal!</button>
+          </div>}
+          <div>
+            {selectedIngredients.map((selectedIngredient) => (
+              <div>
+                  <p>{selectedIngredient.name}</p>
+                  <p style={{fontSize:'0.75rem'}}>{selectedIngredient.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
     </div>
-  ) : (
-    <div>Ładowanie przepisów</div>
   );
 };
 

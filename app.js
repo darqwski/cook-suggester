@@ -5,7 +5,9 @@ const cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser')
 
 const landingPageRouter = require('./routes/pages/landing-page');
+const moderatorAddRecipes = require('./routes/pages/moderator/add-recipe');
 const apiIngredients = require('./routes/api/ingredients');
+const apiSuggestions = require('./routes/api/suggestions');
 
 const app = express();
 
@@ -22,10 +24,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/img')));
 
 app.use('/', landingPageRouter);
+app.use('/', landingPageRouter);
+
 app.use('/', apiIngredients);
+app.use('/', moderatorAddRecipes);
+app.use('/', apiSuggestions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  console.log(req.path)
   next(createError(404));
 });
 

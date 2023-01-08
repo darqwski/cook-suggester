@@ -3,3 +3,10 @@ export interface IIngredient {
   category: string;
   id: number;
 }
+
+export interface IRecipeIngredient {
+  ingredientId: number;
+  ingredient?: IIngredient
+  ingredientAmount: number
+  ingredientUnit: string
+}

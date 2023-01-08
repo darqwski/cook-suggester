@@ -4,9 +4,11 @@ import './css/materialize.css'
 import './css/global.css'
 import './css/variables.less'
 import LandingPage from "./application/landing-page/LandingPage";
+import AddingRecipePage from "./application/adding-recipe/AddingRecipePage";
 
 const routing = [
     { path: '/', component: LandingPage },
+    { path: '/moderator/add-recipe/', component: AddingRecipePage },
 ]
 
 const App = () => {

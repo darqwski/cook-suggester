@@ -6,6 +6,7 @@ var bodyParser = require('body-parser')
 
 const landingPageRouter = require('./routes/pages/landing-page');
 const apiIngredients = require('./routes/api/ingredients');
+const apiSuggestions = require('./routes/api/suggestions');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public/img')));
 
 app.use('/', landingPageRouter);
 app.use('/', apiIngredients);
+app.use('/', apiSuggestions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

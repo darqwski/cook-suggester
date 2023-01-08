@@ -7,10 +7,22 @@ export interface IIngredient {
   category: string;
   id: number;
 }
+export interface ISuggestion {
+  name: string;
+  id: number;
+}
 
 const fetchBasicIngredientsList = async (): Promise<IIngredient[]> => {
   const result = await appRequest<IIngredient[]>({
     url: "API/ingredients/",
+  });
+
+  return result.data;
+};
+
+const fetchSuggestionsList = async (ingredients: IIngredient[]): Promise<ISuggestion[]> => {
+  const result = await appRequest<IIngredient[]>({
+    url: "API/suggestions/",
   });
 
   return result.data;
@@ -23,6 +35,7 @@ const LandingPage: React.FC = () => {
     []
   );
   const [ingredientNameInput, setIngredientNameInput] = useState("");
+  const [suggestions, setSuggestions] = useState<ISuggestion[]>([])
 
   useEffect(() => {
     fetchBasicIngredientsList()
@@ -45,6 +58,12 @@ const LandingPage: React.FC = () => {
     setSelectedIngredients(prevIngredients=> [ingredient, ...prevIngredients, ]);
     setIngredients(prevIngredients=>prevIngredients.filter(prevIngredient =>prevIngredient.id !== ingredient.id))
   }
+
+  const suggestMeals = async () => {
+  const suggestions = await fetchSuggestionsList(selectedIngredients);
+    setSuggestions(suggestions)
+  }
+
 
   console.log({ingredients,filteredIngredients })
 
@@ -71,7 +90,7 @@ const LandingPage: React.FC = () => {
             <p>Your ingredients</p>
           </div>
           {selectedIngredients.length !== 0 && <div>
-            <button>Suggest meal!</button>
+            <button onClick={()=>suggestMeals()}>Suggest meal!</button>
           </div>}
           <div>
             {selectedIngredients.map((selectedIngredient) => (
@@ -83,6 +102,27 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </div>
+      {!!suggestions.length && (
+          <div style={{ position: "fixed", border: '4px solid #AAA', margin:'auto'}}>
+            <h3>{suggestions[0].name}</h3>
+            <p>You will also need</p>
+            <div>
+              <div>
+                <p>Oregano</p>
+                <p style={{fontSize:'0.75rem'}}>Spices</p>
+              </div>
+              <div>
+                <p>Pepper</p>
+                <p style={{fontSize:'0.75rem'}}>Spices</p>
+              </div>
+              <div>
+                <p>Salt</p>
+                <p style={{fontSize:'0.75rem'}}>Spices</p>
+              </div>
+            </div>
+            <a>Check the recipe!</a>
+          </div>
+      )}
     </div>
   );
 };

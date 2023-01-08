@@ -10,7 +10,7 @@ module.exports = {
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.ts', '.tsx'],
         alias: {
-            '@': path.resolve(__dirname, 'src'),
+            'frontend': path.resolve(__dirname, 'frontend'),
         }
     },
     entry: path.resolve(__dirname, 'frontend', 'index.js'),

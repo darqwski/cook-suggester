@@ -1,20 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./landing-page.less";
 import appRequest from "../../utils/app-request";
-
-export interface IIngredient {
-  name: string;
-  category: string;
-  id: number;
-}
-
-const fetchBasicIngredientsList = async (): Promise<IIngredient[]> => {
-  const result = await appRequest<IIngredient[]>({
-    url: "API/ingredients/",
-  });
-
-  return result.data;
-};
+import { fetchBasicIngredientsList } from "../../utils/api/ingredients";
+import { IIngredient } from "../../types/ingredients";
 
 const LandingPage: React.FC = () => {
   const [ingredients, setIngredients] = useState<IIngredient[]>([]);
@@ -45,8 +33,6 @@ const LandingPage: React.FC = () => {
     setSelectedIngredients(prevIngredients=> [ingredient, ...prevIngredients, ]);
     setIngredients(prevIngredients=>prevIngredients.filter(prevIngredient =>prevIngredient.id !== ingredient.id))
   }
-
-  console.log({ingredients,filteredIngredients })
 
   return (
     <div>

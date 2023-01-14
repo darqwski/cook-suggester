@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-/* GET home page. */
-router.get("/API/suggestions/", (req, res, next) => {
+//TODO
+//update commonness in ingredients
+//update recipeSuggestedTimes in recipe
+router.post("/API/suggestions/", (req, res, next) => {
+
     res.send([
         {
             id: 1,

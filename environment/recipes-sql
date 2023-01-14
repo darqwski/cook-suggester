@@ -1,703 +1,452 @@
 
+TRUNCATE `recipe_ingredient`;
+TRUNCATE `recipes`;
+
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (138, 'Recipe 138', 'recipe-138', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '138', '316', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '138', '193', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '138', '968', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (2262, 'Recipe 2262', 'recipe-2262', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2262','4', '2', '558', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2262','4', '3', '213', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2262','4', '29', '769', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2262','4', '13', '14', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (598, 'Recipe 598', 'recipe-598', '4', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '598', '496', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '598', '966', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '598', '98', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (12818, 'Recipe 12818', 'recipe-12818', '2', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '12818','4', '2', '41', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '12818','4', '13', '904', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '12818','4', '29', '612', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '12818','4', '17', '768', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1326, 'Recipe 1326', 'recipe-1326', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1326', '391', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '1326', '587', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1326', '762', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1326', '70', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (102, 'Recipe 102', 'recipe-102', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '102','3', '2', '711', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '102','3', '17', '888', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '102','3', '3', '287', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (442, 'Recipe 442', 'recipe-442', '10', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '442', '44', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '442', '50', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '442', '938', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (1334, 'Recipe 1334', 'recipe-1334', '2', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1334','3', '2', '971', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1334','3', '23', '566', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1334','3', '29', '431', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1334, 'Recipe 1334', 'recipe-1334', '2', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1334', '668', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1334', '454', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '1334', '751', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (22678, 'Recipe 22678', 'recipe-22678', '7', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '22678','4', '2', '8', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '22678','4', '29', '420', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '22678','4', '23', '166', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '22678','4', '17', '585', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1131, 'Recipe 1131', 'recipe-1131', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1131', '694', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '1131', '784', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '1131', '893', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (897, 'Recipe 897', 'recipe-897', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '897','3', '3', '339', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '897','3', '23', '908', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '897','3', '13', '176', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (102, 'Recipe 102', 'recipe-102', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '102', '322', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '102', '691', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '102', '322', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (138, 'Recipe 138', 'recipe-138', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '138','3', '3', '249', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '138','3', '23', '438', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '138','3', '2', '877', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1173, 'Recipe 1173', 'recipe-1173', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1173', '484', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1173', '378', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1173', '927', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (4002, 'Recipe 4002', 'recipe-4002', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '4002','4', '3', '597', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '4002','4', '29', '155', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '4002','4', '2', '624', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '4002','4', '23', '810', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (138, 'Recipe 138', 'recipe-138', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '138', '479', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '138', '536', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '138', '994', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (78, 'Recipe 78', 'recipe-78', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '78','3', '13', '965', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '78','3', '2', '308', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '78','3', '3', '332', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (2262, 'Recipe 2262', 'recipe-2262', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '2262', '197', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '2262', '226', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '2262', '608', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '2262', '599', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (221, 'Recipe 221', 'recipe-221', '5', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '221','2', '13', '712', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '221','2', '17', '503', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (34017, 'Recipe 34017', 'recipe-34017', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '34017', '41', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '34017', '981', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '34017', '873', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '34017', '241', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (15249, 'Recipe 15249', 'recipe-15249', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '15249','4', '13', '252', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '15249','4', '17', '999', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '15249','4', '23', '649', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '15249','4', '3', '741', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (663, 'Recipe 663', 'recipe-663', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '663', '993', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '663', '28', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '663', '793', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (6409, 'Recipe 6409', 'recipe-6409', '10', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '6409','3', '13', '826', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '6409','3', '17', '530', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '6409','3', '29', '820', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (19227, 'Recipe 19227', 'recipe-19227', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '19227', '123', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '19227', '235', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '19227', '330', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '19227', '380', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (598, 'Recipe 598', 'recipe-598', '4', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '598','3', '13', '406', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '598','3', '23', '889', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '598','3', '2', '324', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (598, 'Recipe 598', 'recipe-598', '4', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '598', '999', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '598', '374', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '598', '365', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (2346, 'Recipe 2346', 'recipe-2346', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2346','4', '17', '505', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2346','4', '3', '51', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2346','4', '2', '996', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2346','4', '23', '986', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (8671, 'Recipe 8671', 'recipe-8671', '4', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '8671', '972', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '8671', '468', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '8671', '610', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (11339, 'Recipe 11339', 'recipe-11339', '8', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '11339','3', '17', '503', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '11339','3', '23', '79', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '11339','3', '29', '778', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (782, 'Recipe 782', 'recipe-782', '8', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '782', '281', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '782', '290', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '782', '2', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (1479, 'Recipe 1479', 'recipe-1479', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1479','3', '17', '398', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1479','3', '29', '97', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1479','3', '3', '81', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (34, 'Recipe 34', 'recipe-34', '7', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '34', '570', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '34', '146', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (986, 'Recipe 986', 'recipe-986', '5', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '986','3', '17', '982', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '986','3', '29', '816', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '986','3', '2', '102', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (2346, 'Recipe 2346', 'recipe-2346', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '2346', '821', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '2346', '854', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '2346', '837', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '2346', '220', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (1794, 'Recipe 1794', 'recipe-1794', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1794','4', '23', '782', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1794','4', '3', '254', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1794','4', '13', '808', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1794','4', '2', '53', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (8671, 'Recipe 8671', 'recipe-8671', '4', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '8671', '203', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '8671', '480', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '8671', '812', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (667, 'Recipe 667', 'recipe-667', '10', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '667','2', '23', '811', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '667','2', '29', '242', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1173, 'Recipe 1173', 'recipe-1173', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1173', '379', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1173', '532', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1173', '406', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (26013, 'Recipe 26013', 'recipe-26013', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '26013','4', '23', '935', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '26013','4', '29', '230', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '26013','4', '13', '920', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '26013','4', '3', '178', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (26013, 'Recipe 26013', 'recipe-26013', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '26013', '843', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '26013', '308', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '26013', '198', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '26013', '645', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (19227, 'Recipe 19227', 'recipe-19227', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '19227','4', '29', '54', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '19227','4', '17', '422', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '19227','4', '13', '363', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '19227','4', '3', '432', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (87, 'Recipe 87', 'recipe-87', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '87', '908', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '87', '677', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (87, 'Recipe 87', 'recipe-87', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '87','2', '29', '178', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '87','2', '3', '533', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1326, 'Recipe 1326', 'recipe-1326', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1326', '867', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1326', '379', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1326', '134', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '1326', '300', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (782, 'Recipe 782', 'recipe-782', '8', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '782','3', '2', '663', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '782','3', '23', '925', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '782','3', '17', '718', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (52026, 'Recipe 52026', 'recipe-52026', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '52026', '62', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '52026', '322', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '52026', '278', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '52026', '182', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '52026', '716', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (174, 'Recipe 174', 'recipe-174', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '174','3', '3', '919', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '174','3', '2', '727', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '174','3', '29', '296', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (22678, 'Recipe 22678', 'recipe-22678', '7', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '22678', '179', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '22678', '98', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '22678', '141', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '22678', '953', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (663, 'Recipe 663', 'recipe-663', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '663','3', '3', '48', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '663','3', '13', '148', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '663','3', '17', '685', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1334, 'Recipe 1334', 'recipe-1334', '2', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1334', '187', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '1334', '823', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1334', '429', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (1326, 'Recipe 1326', 'recipe-1326', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1326','4', '13', '721', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1326','4', '2', '957', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1326','4', '3', '992', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '1326','4', '17', '741', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (68034, 'Recipe 68034', 'recipe-68034', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '68034', '232', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '68034', '159', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '68034', '989', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '68034', '444', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '68034', '889', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (5083, 'Recipe 5083', 'recipe-5083', '7', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '5083','3', '13', '797', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '5083','3', '17', '885', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '5083','3', '23', '569', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (15249, 'Recipe 15249', 'recipe-15249', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '15249', '213', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '15249', '109', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '15249', '739', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '15249', '527', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (17342, 'Recipe 17342', 'recipe-17342', '8', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '17342','4', '13', '305', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '17342','4', '23', '180', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '17342','4', '29', '280', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '17342','4', '2', '353', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (30498, 'Recipe 30498', 'recipe-30498', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '30498', '990', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '30498', '630', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '30498', '407', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '30498', '775', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '30498', '321', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (294814, 'Recipe 294814', 'recipe-294814', '10', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '294814','5', '17', '726', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '294814','5', '23', '700', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '294814','5', '13', '196', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '294814','5', '29', '300', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '294814','5', '2', '846', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (6409, 'Recipe 6409', 'recipe-6409', '10', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '6409', '474', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '6409', '341', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '6409', '232', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (754, 'Recipe 754', 'recipe-754', '7', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '754','3', '29', '964', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '754','3', '2', '557', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '754','3', '13', '591', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1326, 'Recipe 1326', 'recipe-1326', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1326', '226', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '1326', '358', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1326', '621', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1326', '690', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (2958, 'Recipe 2958', 'recipe-2958', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2958','4', '2', '656', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2958','4', '17', '975', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2958','4', '29', '743', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2958','4', '3', '682', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1326, 'Recipe 1326', 'recipe-1326', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1326', '571', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '1326', '748', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1326', '449', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1326', '775', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (30498, 'Recipe 30498', 'recipe-30498', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '30498','5', '2', '104', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '30498','5', '17', '124', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '30498','5', '13', '664', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '30498','5', '3', '373', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '30498','5', '23', '10', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (51, 'Recipe 51', 'recipe-51', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '51', '539', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '51', '19', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (68034, 'Recipe 68034', 'recipe-68034', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '68034','5', '2', '691', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '68034','5', '23', '767', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '68034','5', '17', '645', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '68034','5', '3', '452', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '68034','5', '29', '126', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1173, 'Recipe 1173', 'recipe-1173', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1173', '337', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1173', '507', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1173', '954', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (52026, 'Recipe 52026', 'recipe-52026', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '52026','5', '2', '774', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '52026','5', '29', '129', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '52026','5', '3', '166', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '52026','5', '23', '111', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '52026','5', '13', '893', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (442221, 'Recipe 442221', 'recipe-442221', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '442221', '77', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '442221', '159', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '442221', '860', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '442221', '379', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '442221', '487', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (38454, 'Recipe 38454', 'recipe-38454', '6', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '38454','5', '3', '773', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '38454','5', '2', '706', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '38454','5', '17', '387', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '38454','5', '29', '657', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '38454','5', '13', '258', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (147407, 'Recipe 147407', 'recipe-147407', '5', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '147407', '714', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '147407', '75', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '147407', '684', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '147407', '686', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (2001, 'Recipe 2001', 'recipe-2001', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2001','3', '3', '912', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2001','3', '23', '58', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '2001','3', '29', '168', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (4002, 'Recipe 4002', 'recipe-4002', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '4002', '849', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '4002', '656', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '4002', '199', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '4002', '28', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (10166, 'Recipe 10166', 'recipe-10166', '5', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '10166','4', '13', '245', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '10166','4', '17', '99', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '10166','4', '23', '313', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '10166','4', '2', '300', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1334, 'Recipe 1334', 'recipe-1334', '2', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1334', '431', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '1334', '810', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1334', '738', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (884442, 'Recipe 884442', 'recipe-884442', '3', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '884442','6', '17', '743', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '884442','6', '29', '423', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '884442','6', '23', '591', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '884442','6', '3', '71', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '884442','6', '13', '761', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '884442','6', '2', '218', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (2262, 'Recipe 2262', 'recipe-2262', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '2262', '956', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '2262', '65', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '2262', '595', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '2262', '138', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (8671, 'Recipe 8671', 'recipe-8671', '4', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '8671','3', '23', '695', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '8671','3', '13', '28', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '8671','3', '29', '728', 'g');
 
 INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (4002, 'Recipe 4002', 'recipe-4002', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '4002', '196', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '4002', '270', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '4002', '955', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '4002', '43', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (986, 'Recipe 986', 'recipe-986', '5', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '986', '815', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '986', '481', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '986', '357', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (986, 'Recipe 986', 'recipe-986', '5', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '986', '200', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '986', '307', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '986', '2', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1794, 'Recipe 1794', 'recipe-1794', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1794', '910', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '1794', '541', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1794', '573', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1794', '747', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (78, 'Recipe 78', 'recipe-78', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '78', '422', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '78', '70', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '78', '520', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (2958, 'Recipe 2958', 'recipe-2958', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '2958', '229', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '2958', '186', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '2958', '133', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '2958', '5', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (2262, 'Recipe 2262', 'recipe-2262', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '2262', '743', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '2262', '107', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '2262', '22', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '2262', '143', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (12818, 'Recipe 12818', 'recipe-12818', '2', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '12818', '852', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '12818', '982', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '12818', '610', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '12818', '723', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (294814, 'Recipe 294814', 'recipe-294814', '10', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '294814', '646', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '294814', '963', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '294814', '557', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '294814', '462', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '294814', '755', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (52026, 'Recipe 52026', 'recipe-52026', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '52026', '408', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '52026', '670', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '52026', '472', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '52026', '344', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '52026', '449', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1334, 'Recipe 1334', 'recipe-1334', '2', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '1334', '215', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '1334', '89', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '1334', '135', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (22678, 'Recipe 22678', 'recipe-22678', '7', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '22678', '645', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '22678', '769', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '22678', '59', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '22678', '134', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (2262, 'Recipe 2262', 'recipe-2262', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '2262', '430', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '2262', '717', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '2262', '887', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '2262', '663', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (78, 'Recipe 78', 'recipe-78', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '78', '154', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '78', '553', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '78', '9', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (30498, 'Recipe 30498', 'recipe-30498', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '30498', '178', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '30498', '429', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '30498', '19', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '30498', '638', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '30498', '934', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (38454, 'Recipe 38454', 'recipe-38454', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '38454', '9', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '38454', '599', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '38454', '696', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '38454', '135', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '38454', '230', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (38454, 'Recipe 38454', 'recipe-38454', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '38454', '215', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '38454', '897', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '38454', '458', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '38454', '931', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '38454', '667', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (22678, 'Recipe 22678', 'recipe-22678', '7', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '22678', '627', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '22678', '470', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '22678', '447', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '22678', '799', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (294814, 'Recipe 294814', 'recipe-294814', '10', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '294814', '688', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '294814', '684', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '294814', '905', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '294814', '255', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '294814', '793', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (598, 'Recipe 598', 'recipe-598', '4', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '598', '402', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '598', '586', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '598', '455', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (1479, 'Recipe 1479', 'recipe-1479', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '1479', '461', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '1479', '140', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '17', '1479', '327', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (52026, 'Recipe 52026', 'recipe-52026', '6', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '52026', '999', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '13', '52026', '831', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '52026', '963', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '23', '52026', '974', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '52026', '869', 'g');
-
-INSERT INTO `recipes` (`recipeId`, `recipeName`, `recipeUrl`, `cuisineId`, `recipeSuggestedTimes`, `recipeIngredientsAverageCommonness`, 
-`recipeComplexity`, `recipeCommonnessInCuisine`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
-VALUES (174, 'Recipe 174', 'recipe-174', '3', '0', NULL, '1', NULL, NULL, '1');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '29', '174', '931', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '3', '174', '888', 'g');
-INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
-VALUES (NULL, '2', '174', '427', 'g');
+`recipeComplexity`, `recipeSuggestionScore`, `recipeTimeInMinutes`) 
+VALUES (147407, 'Recipe 147407', 'recipe-147407', '5', '0', NULL, '1', NULL, '1');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '147407','4', '29', '689', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '147407','4', '13', '984', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '147407','4', '23', '698', 'g');
+INSERT INTO `recipe_ingredient` (`recipeIngredientId`, `recipeId`, `ingredientsInRecipe`, `ingredientId`, `ingredientAmount`, `ingredientUnit`) 
+VALUES (NULL, '147407','4', '17', '415', 'g');

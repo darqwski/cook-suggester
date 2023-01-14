@@ -3,7 +3,8 @@ const fs = require('fs')
 const ingredientInDb = [2,3,13,17,23,29];
 
 const recipes = [];
-const baseProbability = 0.015
+const recipesSums = []
+const baseProbability = 0.025
 const ingredientsProbability = [,,,baseProbability, baseProbability / (ingredientInDb.length ** 1), baseProbability/ (ingredientInDb.length ** 2), baseProbability/ (ingredientInDb.length ** 4)];
 
 const generateRecipes =  (currentList, maxDepth, currentLevel = 0) => {
@@ -12,7 +13,12 @@ const generateRecipes =  (currentList, maxDepth, currentLevel = 0) => {
     const probability = ingredientsProbability[maxDepth];
     adjustedLists.forEach(adjustedList => {
       if(probability > Math.random()) {
-        recipes.push([...adjustedList])
+        const recipeNumber = adjustedList.reduce((acc, item) => acc * item,1)
+
+        if(!recipesSums.includes(recipeNumber)) {
+          recipes.push([...adjustedList])
+          recipesSums.push(recipeNumber)
+        }
       }
     })
 
@@ -28,7 +34,10 @@ generateRecipes([], 4)
 generateRecipes([], 5)
 
 console.log("RECIPES GENERATED IN "+recipes.length+" AMOUNT");
-let finalContent = ``;
+let finalContent = `
+TRUNCATE \`recipe_ingredient\`;
+TRUNCATE \`recipes\`;
+`;
 const generateSqlForRecipe = (recipe) => {
   const recipeNumber = recipe.reduce((acc, item) => acc * item,1)
   let cuisineId = `${recipeNumber}`.split('').reduce((acc,item) => acc + item, 0);
@@ -38,12 +47,12 @@ const generateSqlForRecipe = (recipe) => {
   finalContent +=`
 
 INSERT INTO \`recipes\` (\`recipeId\`, \`recipeName\`, \`recipeUrl\`, \`cuisineId\`, \`recipeSuggestedTimes\`, \`recipeIngredientsAverageCommonness\`, 
-\`recipeComplexity\`, \`recipeCommonnessInCuisine\`, \`recipeSuggestionScore\`, \`recipeTimeInMinutes\`) 
-VALUES (${recipeNumber}, 'Recipe ${recipeNumber}', 'recipe-${recipeNumber}', '${cuisineId}', '0', NULL, '1', NULL, NULL, '1');`
+\`recipeComplexity\`, \`recipeSuggestionScore\`, \`recipeTimeInMinutes\`) 
+VALUES (${recipeNumber}, 'Recipe ${recipeNumber}', 'recipe-${recipeNumber}', '${cuisineId}', '0', NULL, '1', NULL, '1');`
   recipe.forEach(ingredient => {
     finalContent+=`
-INSERT INTO \`recipe_ingredient\` (\`recipeIngredientId\`, \`recipeId\`, \`ingredientId\`, \`ingredientAmount\`, \`ingredientUnit\`) 
-VALUES (NULL, '${ingredient}', '${recipeNumber}', '${Math.round(Math.random()*1000)}', 'g');`
+INSERT INTO \`recipe_ingredient\` (\`recipeIngredientId\`, \`recipeId\`, \`ingredientsInRecipe\`, \`ingredientId\`, \`ingredientAmount\`, \`ingredientUnit\`) 
+VALUES (NULL, '${recipeNumber}','${recipe.length}', '${ingredient}', '${Math.round(Math.random()*1000)}', 'g');`
   })
 }
 recipes.forEach((recipe,index) => {

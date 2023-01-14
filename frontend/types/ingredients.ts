@@ -1,7 +1,14 @@
+export interface IIngredientCategory {
+  ingredientCategoryId: number;
+  ingredientCategoryName: string
+  appearanceInRecipes: number
+}
+
 export interface IIngredient {
-  name: string;
-  category: string;
-  id: number;
+  ingredientId: number;
+  ingredientName: string;
+  ingredientCategory: IIngredientCategory;
+  defaultUnit: number;
 }
 
 export interface IRecipeIngredient {

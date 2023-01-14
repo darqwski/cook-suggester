@@ -24,8 +24,8 @@ const IngredientPicker: React.FC<{
       ingredients.filter(
         (ingredient) =>
           ingredientNameInput !== "" &&
-          (ingredient.name?.includes(ingredientNameInput) ||
-            ingredient.category?.includes(ingredientNameInput))
+          (ingredient.ingredientName?.includes(ingredientNameInput) ||
+            ingredient.ingredientCategory?.ingredientCategoryName.includes(ingredientNameInput))
       ),
     [ingredientNameInput, ingredients]
   );
@@ -36,7 +36,7 @@ const IngredientPicker: React.FC<{
 
   const selectRecipeIngredient = (ingredient: IIngredient) => {
     setRecipeIngredients((prevRecipeIngredients) => [
-      { ingredient, ingredientId: ingredient.id,
+      { ingredient, ingredientId: ingredient.ingredientId,
       //TODO default amounts and units
         ingredientAmount: 0,
         ingredientUnit: ''
@@ -45,7 +45,7 @@ const IngredientPicker: React.FC<{
     ]);
     setIngredients((prevIngredients) =>
       prevIngredients.filter(
-        (prevIngredient) => prevIngredient.id !== ingredient.id
+        (prevIngredient) => prevIngredient.ingredientId !== ingredient.ingredientId
       )
     );
     setIngredientNameInput('')
@@ -92,8 +92,8 @@ const IngredientPicker: React.FC<{
                 style={{ cursor: "pointer" }}
                 onClick={() => selectRecipeIngredient(filteredIngredient)}
               >
-                <p>{filteredIngredient.name}</p>
-                <p style={{ fontSize: "0.75rem" }}>{filteredIngredient.name}</p>
+                <p>{filteredIngredient.ingredientName}</p>
+                <p style={{ fontSize: "0.75rem" }}>{filteredIngredient.ingredientName}</p>
               </div>
             ))}
           </div>
@@ -106,9 +106,9 @@ const IngredientPicker: React.FC<{
             {recipeIngredients.map((recipeIngredient) => (
               <div>
                 <div>
-                  <p>{recipeIngredient.ingredient?.name}</p>
+                  <p>{recipeIngredient.ingredient?.ingredientName}</p>
                   <p style={{ fontSize: "0.75rem" }}>
-                    {recipeIngredient.ingredient?.name}
+                    {recipeIngredient.ingredient?.ingredientName}
                   </p>
                 </div>
                 <div>

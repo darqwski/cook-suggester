@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./landing-page.less";
-import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
+import { IRecipeIngredient } from "../../types/ingredients";
 import IngredientPicker from "../../components/IngredientPicker";
 
 const LandingPage: React.FC = () => {

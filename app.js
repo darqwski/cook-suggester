@@ -8,6 +8,7 @@ const landingPageRouter = require('./routes/pages/landing-page');
 const moderatorAddRecipes = require('./routes/pages/moderator/add-recipe');
 const apiIngredients = require('./routes/api/ingredients');
 const apiSuggestions = require('./routes/api/suggestions');
+const apiRecipes = require('./routes/api/recipes');
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use('/', landingPageRouter);
 app.use('/', apiIngredients);
 app.use('/', moderatorAddRecipes);
 app.use('/', apiSuggestions);
+app.use('/', apiRecipes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

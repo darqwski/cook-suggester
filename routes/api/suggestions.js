@@ -53,20 +53,20 @@ router.post("/API/suggestions/", async (req, res, next) => {
             const recipe = mostMatchingRecipesInformation.find(
               (mostMatchingRecipeInformation) => mostMatchingRecipeInformation.recipeId === ingredientRecipe.recipeId
             );
-            currentRecipe = { ...recipe, matchingIngredientIds: [], missingIngredientIds: [] };
+            currentRecipe = { ...recipe, matchingIngredients: [], missingIngredients: [] };
         }
 
         if(selectedIngredientIds.includes(ingredientRecipe.ingredientId)){
-            currentRecipe.matchingIngredientIds.push(ingredientRecipe.ingredientId)
+            currentRecipe.matchingIngredients.push(ingredientRecipe)
         } else {
-            currentRecipe.missingIngredientIds.push(ingredientRecipe.ingredientId)
+            currentRecipe.missingIngredients.push(ingredientRecipe)
         }
 
         return { ...acc, [ingredientRecipe.recipeId]: currentRecipe }
     }, {})
     const recipesWithCalculatedFields = Object.values(mostMatchingRecipesWithIngredients).map(recipe => ({
         ...recipe,
-        suggestionScore:  recipe.matchingIngredientIds.length / (recipe.matchingIngredientIds.length + recipe.missingIngredientIds.length)
+        suggestionScore:  recipe.matchingIngredients.length / (recipe.matchingIngredients.length + recipe.missingIngredients.length)
     }));
     const sortedRecipes = recipesWithCalculatedFields.sort((recipeA, recipeB) => recipeB.suggestionScore - recipeA.suggestionScore)
     console.timeEnd("Building proper object");

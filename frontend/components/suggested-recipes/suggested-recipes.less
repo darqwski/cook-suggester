@@ -1,25 +1,81 @@
 @import "frontend/css/variables.less";
 
+@ingredientSize: 7rem;
+
 .suggestions-container {
   position: fixed;
-   &__hidden {
+   &--hidden {
      display: none;
    }
   width: 90%;
   height: 90%;
   top: 0;
   left: 0;
-  margin: 5%;
+  margin: 0 5% 5%;
 }
 .suggestions-story {
   background: #FFF;
   box-shadow: @boxShadow2;
   position: absolute;
   width: 50%;
-  height: 30rem;
-  margin: 5% 25%;
+  margin: 0% 25%;
   transform-origin: 50% 500%;
   z-index: 102;
+  padding: 1rem;
+  &__header {
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+    & > h3 {
+      flex-grow: 1;
+    }
+  }
+
+  &__image-section {
+    border-bottom: 1px solid lightgrey;
+  }
+
+  &__image {
+    max-height: 20rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__ingredients-list {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid lightgrey;
+  }
+  &__footer {}
+}
+.suggestions-story-ingredient {
+  margin: 1rem;
+
+  &__image {
+    width: @ingredientSize;
+    height: @ingredientSize;
+    border: 1px solid #000000;
+    border-radius: @ingredientSize;
+    font-size: 2rem;
+    position: relative;
+    /*properties where is no image and we are showing ingredientId*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__name {
+    font-size: 1.25rem;
+  }
+  &__amount {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #666;
+    text-align: right;
+  }
+  &--is-matching {
+    opacity: 0.6;
+  }
 }
 .suggestions-story__previous {
   transform: rotate(-45deg);

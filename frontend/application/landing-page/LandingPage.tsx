@@ -6,17 +6,17 @@ import { fetchSuggestionsList } from "../../utils/api/suggestions";
 import SuggestedRecipes from "../../components/suggested-recipes/SuggestedRecipes";
 import { ISuggestion } from "../../types/suggestion";
 import {
-  suggestedIngredientsExample,
-  suggestedRecipes, suggestedRecipesExample
+  ingredientsExample,
+  suggestedRecipesExample
 } from "../../components/suggested-recipes/suggested-recipe.example";
 
 const LandingPage: React.FC = () => {
   const [selectedIngredients, setSelectedIngredients] = useState<IRecipeIngredient[]>(
     []
   );
-  const [suggestions, setSuggestions] = useState<ISuggestion[]>( suggestedRecipesExample);
+  const [suggestions, setSuggestions] = useState<ISuggestion[]>(suggestedRecipesExample);
   const [suggestedIngredients, setSuggestedIngredients] = useState<IIngredient[]>(
-    suggestedIngredientsExample
+    ingredientsExample
   );
 
   const fetchSuggestions = async () => {

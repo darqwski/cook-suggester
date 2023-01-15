@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ISuggestion } from "../../types/suggestion";
-import { IIngredient } from "../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
 import SuggestedRecipeCard from "./SuggestedRecipeCard";
 import "./suggested-recipes.less";
-import { CSSTransition } from "react-transition-group";
+
 export const getAnimationClass = (
   temporaryIndex: number,
   visibleIndex: number
@@ -49,7 +49,7 @@ const SuggestedRecipes: React.FC<{
   return (
     <div
       className={`suggestions-container${
-        isSuggestionsVisible ? "" : "__hidden"
+        isSuggestionsVisible ? "" : "--hidden"
       }`}
     >
       <button
@@ -78,16 +78,19 @@ const SuggestedRecipes: React.FC<{
             <SuggestedRecipeCard
               className={`suggestions-story suggestions-story__previous${animationClass}`}
               suggestedRecipe={suggestions[visibleIndex - 1]}
+              ingredients={ingredients}
             />
           )}
           <SuggestedRecipeCard
             className={"suggestions-story" + animationClass}
             suggestedRecipe={suggestions[visibleIndex]}
+            ingredients={ingredients}
           />
           {visibleIndex + 1 < suggestions.length && (
             <SuggestedRecipeCard
               className={`suggestions-story suggestions-story__next${animationClass}`}
               suggestedRecipe={suggestions[visibleIndex + 1]}
+              ingredients={ingredients}
             />
           )}
         </div>

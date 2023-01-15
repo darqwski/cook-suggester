@@ -27,3 +27,15 @@ body, #react-app, html {
     color: #666666;
     text-align: right;
 }
+
+.tick-icon {
+    position: absolute;
+    width: 100px;
+    height: 66px;
+    transform: rotate(-45deg);
+    border: 16px solid green;
+    transform-origin: 50px 16px;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0px 10px;
+}

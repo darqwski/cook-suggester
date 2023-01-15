@@ -25,7 +25,7 @@ const executeQuery = (query, params = []) => {
   return new Promise((resolve, reject) => {
     con.query(query, params, (err, result)=>{
       if(err){
-        reject(err)
+        console.log(err)
       }
 
       resolve(result)

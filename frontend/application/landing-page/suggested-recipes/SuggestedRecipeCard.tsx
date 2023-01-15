@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
-import { ISuggestion } from "../../types/suggestion";
+import { ISuggestion } from "../../../types/suggestion";
 import { CSSTransition } from "react-transition-group";
-import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
 import suggestedRecipes from "./SuggestedRecipes";
 import SuggestedRecipeIngredient from "./SuggestedRecipeIngredient";
-import CirclePercentBar from "../circle-percent-bar/CirclePercentBar";
+import CirclePercentBar from "../../../components/circle-percent-bar/CirclePercentBar";
 
 export const getCardContainerClassName = (position?: string) => {
   if (position === "prev") {

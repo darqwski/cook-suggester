@@ -17,7 +17,7 @@ router.post("/API/suggestions/", async (req, res, next) => {
      WHERE ingredientId IN (?) 
      GROUP BY recipeId 
      ORDER BY matchingProportion DESC 
-    `, [selectedIngredientIds.join(',')])
+    `, [selectedIngredientIds])
     console.timeEnd("querying recipe_ingredient by ingredients from user")
 
     const mostMatchingRecipesIds = mostMatchingRecipesForIngredients.map(mostMatchingRecipesForIngredient => mostMatchingRecipesForIngredient.recipeId)
@@ -26,13 +26,14 @@ router.post("/API/suggestions/", async (req, res, next) => {
     //For some reason parameters is not working
     const mostMatchingRecipesInformation = await executeQuery(`
         SELECT * FROM \`recipes\`
-        WHERE recipeId IN (${mostMatchingRecipesIds.join(',')});
-    `);
+        WHERE recipeId IN (?);
+    `, [mostMatchingRecipesIds]);
     console.timeEnd("querying recipes information")
     console.time("querying missing ingredients")
     //For some reason parameters is not working
     const allIngredientsForRecipes = await executeQuery(
-      `SELECT * FROM \`recipe_ingredient\` WHERE recipeId IN (${mostMatchingRecipesIds.join(',')});`
+      `SELECT * FROM \`recipe_ingredient\` WHERE recipeId IN (?);`,
+      [mostMatchingRecipesIds]
     );
 
     console.timeEnd("querying missing ingredients")
@@ -43,7 +44,7 @@ router.post("/API/suggestions/", async (req, res, next) => {
        return [...acc, ingredient.ingredientId]
     },[])
     console.time("querying missing ingredients information");
-    const ingredientsInformation = await executeQuery(`SELECT * FROM \`ingredients\` WHERE ingredientId IN (${distinctIngredientIds.join(',')});`);
+    const ingredientsInformation = await executeQuery(`SELECT * FROM \`ingredients\` WHERE ingredientId IN (?);`,[distinctIngredientIds]);
     console.timeEnd("querying missing ingredients information")
     console.time("Building proper object");
 
@@ -73,7 +74,7 @@ router.post("/API/suggestions/", async (req, res, next) => {
 
 
 
-    res.send({ suggestedRecipes: recipesWithCalculatedFields, ingredients: ingredientsInformation });
+    res.send({ suggestedRecipes: sortedRecipes, ingredients: ingredientsInformation });
 });
 
 module.exports = router;

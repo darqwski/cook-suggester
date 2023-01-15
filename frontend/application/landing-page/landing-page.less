@@ -1,36 +1,13 @@
 @import "../../css/variables.less";
-.story-container {
-  width: 50%;
+
+.suggest-button-container {
+  display: flex;
   justify-content: center;
-  display:flex;
-  align-items: center;
-  &__arrow-left {
-    padding-right: 2rem;
-    font-size: 4rem;
-    cursor: pointer;
-  }
-  &__arrow-right {
-    padding-left: 2rem;
-    font-size: 4rem;
-    cursor: pointer;
-  }
-}
-.story {
-  margin: 2rem;
-  padding: 1rem;
-  box-shadow: @boxShadow1;
-  &__image {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  z-index: 1005;
+  & > .btn {
     width: 80%;
-    max-height: 25rem;
-    margin: 0% 10%;
-  }
-  &__title {
-    font-size: 2rem;
-  }
-  &__ingredients {
-
-  }
-  &__ingredients-title {
-
   }
 }

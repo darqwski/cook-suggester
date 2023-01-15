@@ -1,5 +1,5 @@
 import React from "react";
-import { IRecipeIngredient } from "../../types/ingredients";
+import { IRecipeIngredient } from "../../../types/ingredients";
 
 const SuggestedRecipeIngredient: React.FC<{
   recipeIngredient: IRecipeIngredient;

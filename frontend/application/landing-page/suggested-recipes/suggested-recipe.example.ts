@@ -1,6 +1,6 @@
 //@ts-nocheck
-import { ISuggestion } from "../../types/suggestion";
-import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
+import { ISuggestion } from "../../../types/suggestion";
+import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
 
 export const suggestedRecipesExample: ISuggestion[] = [
   {

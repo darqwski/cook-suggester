@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./landing-page.less";
 import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
-import IngredientPicker from "../../components/IngredientPicker";
+import IngredientPicker from "../../components/ingredient-picker/IngredientPicker";
 import { fetchSuggestionsList } from "../../utils/api/suggestions";
-import SuggestedRecipes from "../../components/suggested-recipes/SuggestedRecipes";
+import SuggestedRecipes from "./suggested-recipes/SuggestedRecipes";
 import { ISuggestion } from "../../types/suggestion";
 import Loader from "../../components/Loader";
 
@@ -24,19 +24,24 @@ const LandingPage: React.FC = () => {
     setSuggestedIngredients(data.ingredients)
     setSuggestionLoading(false)
   }
+  const clearSuggestions = () => {
+    setSuggestions([]);
+    setSuggestedIngredients([])
+  }
   const isSuggestionsVisible = !!suggestions.length && !!suggestedIngredients.length
   return (
     <div>
       <h3>Welcome in cook suggester</h3>
       <p>Please add ingredients: </p>
-      {selectedIngredients.length !== 0 && (
-        <div>
-          <button onClick={fetchSuggestions}>Suggest meal!</button>
-        </div>
-      )}
+
       {isSuggestionsVisible && <SuggestedRecipes suggestions={suggestions} ingredients={suggestedIngredients} />}
       {isSuggestionsLoading &&  <Loader />}
       <IngredientPicker onChange={setSelectedIngredients} />
+      {selectedIngredients.length !== 0 && (
+        <div className="suggest-button-container">
+          <button className="btn btn-large" onClick={suggestions.length ? clearSuggestions : fetchSuggestions}>{suggestions.length ? "Change ingredients" : "Suggest meal!"}</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -68,7 +68,7 @@ router.post("/API/suggestions/", async (req, res, next) => {
         ...recipe,
         suggestionScore:  recipe.matchingIngredientIds.length / (recipe.matchingIngredientIds.length + recipe.missingIngredientIds.length)
     }));
-    const sortedRecipes = recipesWithCalculatedFields.sort((recipeA, recipeB) => recipeA.suggestionScore - recipeB.suggestionScore)
+    const sortedRecipes = recipesWithCalculatedFields.sort((recipeA, recipeB) => recipeB.suggestionScore - recipeA.suggestionScore)
     console.timeEnd("Building proper object");
 
 

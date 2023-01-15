@@ -1,4 +1,4 @@
-
+@import "frontend/css/variables.less";
 
 .suggestions-container {
   position: fixed;
@@ -10,15 +10,15 @@
   top: 0;
   left: 0;
   margin: 5%;
-  background: #AAA;
 }
 .suggestions-story {
-  background: #00b0ff;
+  background: #FFF;
+  box-shadow: @boxShadow2;
   position: absolute;
-  width: 10rem;
+  width: 50%;
   height: 30rem;
-  margin: 5% calc(50% - 10rem);
-  transform-origin: 50% 200%;
+  margin: 5% 25%;
+  transform-origin: 50% 500%;
   z-index: 102;
 }
 .suggestions-story__previous {

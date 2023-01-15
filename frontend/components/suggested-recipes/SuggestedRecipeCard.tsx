@@ -13,8 +13,8 @@ export const getCardContainerClassName = (position?: string) => {
   return "suggestions-story"
 }
 
-const SuggestedRecipeCard: React.FC<{suggestedRecipe: ISuggestion, position?: string}> = ({ suggestedRecipe, position}) => {
-  return <div className="suggestions-story">SuggestedRecipeCard {JSON.stringify(suggestedRecipe)}</div>
+const SuggestedRecipeCard: React.FC<{suggestedRecipe: ISuggestion, className: string}> = ({ suggestedRecipe, className}) => {
+  return <div className={className}>SuggestedRecipeCard {JSON.stringify(suggestedRecipe)}</div>
 
 };
 

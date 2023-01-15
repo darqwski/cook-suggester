@@ -3,6 +3,7 @@ import { ISuggestion } from "../../types/suggestion";
 import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
 import SuggestedRecipeCard from "./SuggestedRecipeCard";
 import "./suggested-recipes.less";
+import { useCarouselNavigation } from "./useCarouselNavigation";
 
 export const getAnimationClass = (
   temporaryIndex: number,
@@ -20,82 +21,41 @@ const SuggestedRecipes: React.FC<{
   suggestions: ISuggestion[];
   ingredients: IIngredient[];
 }> = ({ suggestions, ingredients }) => {
-  const isSuggestionsVisible = !!suggestions.length;
-  const [leftIndex, setLeftIndex] = useState(0);
-  const [temporaryIndex, setTemporary] = useState(1);
-  const [visibleIndex, setIndex] = useState(1);
-  const [rightIndex, setRightIndex] = useState(2);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIndex(temporaryIndex);
-    }, 300);
-  }, [temporaryIndex]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (leftIndex === visibleIndex) {
-        setLeftIndex((index) => index - 1);
-        setRightIndex((index) => index - 1);
-      } else if (rightIndex === visibleIndex) {
-        setRightIndex((index) => index + 1);
-        setLeftIndex((index) => index + 1);
-      }
-    }, 300);
-  }, [visibleIndex]);
-
-  const animationClass = getAnimationClass(temporaryIndex, visibleIndex);
-
+  const { showNextRecipe, showPrevRecipe, visibleIndex, animationClass } =
+    useCarouselNavigation();
   return (
-    <div
-      className={`suggestions-container${
-        isSuggestionsVisible ? "" : "--hidden"
-      }`}
-    >
-      <button
-        onClick={() => {
-          if (temporaryIndex !== visibleIndex) {
-            return;
-          }
-          setTemporary((i) => i - 1);
-        }}
-      >
-        Prev
-      </button>
-      <button
-        onClick={() => {
-          if (temporaryIndex !== visibleIndex) {
-            return;
-          }
-          setTemporary((i) => i + 1);
-        }}
-      >
-        Next
-      </button>
-      {isSuggestionsVisible && (
-        <div>
-          {visibleIndex > 0 && (
-            <SuggestedRecipeCard
-              className={`suggestions-story suggestions-story__previous${animationClass}`}
-              suggestedRecipe={suggestions[visibleIndex - 1]}
-              ingredients={ingredients}
-            />
-          )}
+    <>
+      <div className="suggestions-story-background" />
+      <div className="suggestions-story-container">
+        {visibleIndex > 0 && (
           <SuggestedRecipeCard
-            className={"suggestions-story" + animationClass}
-            suggestedRecipe={suggestions[visibleIndex]}
+            className={`suggestions-story suggestions-story__previous${animationClass}`}
+            suggestedRecipe={suggestions[visibleIndex - 1]}
             ingredients={ingredients}
           />
-          {visibleIndex + 1 < suggestions.length && (
-            <SuggestedRecipeCard
-              className={`suggestions-story suggestions-story__next${animationClass}`}
-              suggestedRecipe={suggestions[visibleIndex + 1]}
-              ingredients={ingredients}
-            />
-          )}
+        )}
+        <SuggestedRecipeCard
+          className={"suggestions-story" + animationClass}
+          suggestedRecipe={suggestions[visibleIndex]}
+          ingredients={ingredients}
+        />
+        {visibleIndex + 1 < suggestions.length && (
+          <SuggestedRecipeCard
+            className={`suggestions-story suggestions-story__next${animationClass}`}
+            suggestedRecipe={suggestions[visibleIndex + 1]}
+            ingredients={ingredients}
+          />
+        )}
+      </div>
+      <div className="suggestions-story-navigation">
+        <div className="suggestions-container-arrow" onClick={showPrevRecipe}>
+          Prev
         </div>
-      )}
-    </div>
+        <div className="suggestions-container-arrow" onClick={showNextRecipe}>
+          Next
+        </div>
+      </div>
+    </>
   );
 };
 

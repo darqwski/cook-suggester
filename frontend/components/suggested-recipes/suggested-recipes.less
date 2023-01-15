@@ -2,23 +2,58 @@
 
 @ingredientSize: 7rem;
 
-.suggestions-container {
+.suggestions-story-container {
   position: fixed;
-   &--hidden {
-     display: none;
-   }
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  margin: 0 5% 5%;
+  background: rgba(170,170,170,.6);
 }
+
+.suggestions-story-background {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+.suggestions-story-navigation {
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 1002;
+  top: 0;
+}
+
+.suggestions-container-arrow {
+  cursor: pointer;
+  width: 15%;
+  margin: 0 5%;
+  height: 50%;
+  display: flex;
+  transition: 0.1s;
+  justify-content: center;
+  background: white;
+  align-items: center;
+  &:hover {
+    box-shadow: @boxShadow5;
+  }
+}
+
 .suggestions-story {
   background: #FFF;
   box-shadow: @boxShadow2;
   position: absolute;
   width: 50%;
-  margin: 0% 25%;
+  margin: 2% 25%;
   transform-origin: 50% 500%;
   z-index: 102;
   padding: 1rem;
@@ -47,7 +82,9 @@
     flex-wrap: wrap;
     border-bottom: 1px solid lightgrey;
   }
-  &__footer {}
+  &__footer {
+    display: flex;
+  }
 }
 .suggestions-story-ingredient {
   margin: 1rem;

@@ -32,6 +32,10 @@ const LandingPage: React.FC = () => {
   return (
     <div>
       <h3>Welcome in cook suggester</h3>
+      <div>
+        <p>Menu</p>
+        <a href="/moderator/add-recipe/">Adding recipe</a>
+      </div>
       <p>Please add ingredients: </p>
 
       {isSuggestionsVisible && <SuggestedRecipes suggestions={suggestions} ingredients={suggestedIngredients} />}

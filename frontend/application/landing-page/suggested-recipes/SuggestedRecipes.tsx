@@ -21,8 +21,9 @@ const SuggestedRecipes: React.FC<{
   suggestions: ISuggestion[];
   ingredients: IIngredient[];
 }> = ({ suggestions, ingredients }) => {
+  const lastRecipeIndex = suggestions.length;
   const { showNextRecipe, showPrevRecipe, visibleIndex, animationClass } =
-    useCarouselNavigation();
+    useCarouselNavigation(lastRecipeIndex);
   return (
     <>
       <div className="suggestions-story-background" />
@@ -48,12 +49,16 @@ const SuggestedRecipes: React.FC<{
         )}
       </div>
       <div className="suggestions-story-navigation">
-        <div className="suggestions-container-arrow" onClick={showPrevRecipe}>
-          Prev
-        </div>
-        <div className="suggestions-container-arrow" onClick={showNextRecipe}>
-          Next
-        </div>
+        {visibleIndex > 0 ? (
+          <div className="suggestions-container-arrow" onClick={showPrevRecipe}>
+            Prev
+          </div>
+        ): <div style={{flexGrow: 1}} />}
+        {visibleIndex < lastRecipeIndex ? (
+          <div className="suggestions-container-arrow" onClick={showNextRecipe}>
+            Next
+          </div>
+        ) : <div style={{flexGrow: 1}} />}
       </div>
     </>
   );

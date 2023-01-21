@@ -1,11 +1,11 @@
 const {
   insertNewRecipe,
   insertAllRecipeIngredients,
-} = require("../routes/api/recipe.utils.inserting");
+} = require("../backend/routes/api/recipe.utils.inserting");
 const {
   updateIngredientsCuisineAppearances,
-} = require("../routes/api/recipe.utils.updating");
-const { executeQuery } = require("../utils/database-utils");
+} = require("../backend/routes/api/recipe.utils.updating");
+const { executeQuery } = require("../backend/utils/database-utils");
 
 const ingredientInDb = [2, 3, 13, 17, 23, 29];
 

@@ -9,6 +9,21 @@ const checkIfIngredientCuisineExists = async (cuisineId, ingredientId) => {
   return !!matchingItems.length;
 };
 
+const getCurrentRecipesInCuisine = async (cuisineId) => {
+  const matchingItems = await executeQuery(
+    "SELECT recipesWithIngredient, recipesWithoutIngredient FROM ingredients_cuisines WHERE cuisineId = ?",
+    [cuisineId]
+  );
+
+  if(!matchingItems.length){
+    return 0;
+  }
+
+  const { recipesWithIngredient, recipesWithoutIngredient } = matchingItems[0]
+
+  return recipesWithIngredient + recipesWithoutIngredient;
+};
+
 const updateIngredientCuisineAppearance = async (cuisineId, ingredientId) => {
   await executeQuery(
     `UPDATE \`ingredients_cuisines\` SET recipesWithIngredient = recipesWithIngredient + 1 WHERE ingredientId = ? AND cuisineId = ?;`,
@@ -19,11 +34,12 @@ const createNewIngredientCuisineAppearance = async (
   cuisineId,
   ingredientId
 ) => {
+  const currentRecipesAmount = await getCurrentRecipesInCuisine(cuisineId)
   await executeQuery(
     `
 INSERT INTO \`ingredients_cuisines\` (\`ingredientCuisineId\`, \`ingredientId\`, \`cuisineId\`, \`recipesWithIngredient\`, \`recipesWithoutIngredient\`) 
 VALUES (NULL, ?, ?, ?, ?);`,
-    [ingredientId, cuisineId, 1, 0]
+    [ingredientId, cuisineId, 1, currentRecipesAmount]
   );
 };
 
@@ -39,7 +55,7 @@ const updateCuisineRecipesWithoutIngredients = async (
 };
 
 const updateIngredientsCuisineAppearances = async (cuisineId, ingredients) => {
-  console.time("updating cuisine ingredient");
+  console.time(`updating cuisine ${cuisineId} with ingredients ${ingredients.map(({ingredientId}) => ingredientId).join()}`);
   for (let i = 0; i < ingredients.length; i++) {
     const { ingredientId } = ingredients[i];
     const ingredientCuisineRowExists = await checkIfIngredientCuisineExists(
@@ -53,7 +69,7 @@ const updateIngredientsCuisineAppearances = async (cuisineId, ingredients) => {
     }
   }
   await updateCuisineRecipesWithoutIngredients(cuisineId, ingredients);
-  console.timeEnd("updating cuisine ingredient");
+  console.timeEnd(`updating cuisine ${cuisineId} with ingredients ${ingredients.map(({ingredientId}) => ingredientId).join()}`);
 };
 
 module.exports = {

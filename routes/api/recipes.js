@@ -4,20 +4,15 @@ const {
   insertAllRecipeIngredients,
 } = require("./recipe.utils.inserting");
 const { updateIngredientsCuisineAppearances } = require("./recipe.utils.updating");
+const { executeQuery } = require("../../utils/database-utils");
 const router = express.Router();
 
 //Adding new recipe
-//TODO
-//Update recipeIngredientsAverageCommonness in recipes
 
 router.post("/API/recipes/", async (req, res, next) => {
   const { recipeDetails, ingredients } = req.body;
   const {
-    recipeName,
-    recipeUrl,
     cuisineId,
-    recipeComplexity,
-    recipeTimeInMinutes,
   } = recipeDetails;
   console.log({ recipeDetails, ingredients });
 
@@ -26,7 +21,6 @@ router.post("/API/recipes/", async (req, res, next) => {
     ingredients.length
   );
 
-  console.log({recipeId})
   await insertAllRecipeIngredients(ingredients, recipeId);
   await updateIngredientsCuisineAppearances(cuisineId, ingredients);
 

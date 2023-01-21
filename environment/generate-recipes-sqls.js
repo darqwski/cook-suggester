@@ -1,70 +1,104 @@
-const fs = require('fs')
+const {
+  insertNewRecipe,
+  insertAllRecipeIngredients,
+} = require("../routes/api/recipe.utils.inserting");
+const {
+  updateIngredientsCuisineAppearances,
+} = require("../routes/api/recipe.utils.updating");
+const { executeQuery } = require("../utils/database-utils");
 
-const ingredientInDb = [2,3,13,17,23,29];
+const ingredientInDb = [2, 3, 13, 17, 23, 29];
 
 const recipes = [];
-const recipesSums = []
-const baseProbability = 0.025
-const ingredientsProbability = [,,,baseProbability, baseProbability / (ingredientInDb.length ** 1), baseProbability/ (ingredientInDb.length ** 2), baseProbability/ (ingredientInDb.length ** 4)];
+const recipesSums = [];
+const baseProbability = 0.025;
+const ingredientsProbability = [
+  ,
+  ,
+  ,
+  baseProbability,
+  baseProbability / ingredientInDb.length ** 1,
+  baseProbability / ingredientInDb.length ** 2,
+  baseProbability / ingredientInDb.length ** 4,
+];
 
-const generateRecipes =  (currentList, maxDepth, currentLevel = 0) => {
-  const adjustedLists = ingredientInDb.map(ingredient =>  currentList.includes(ingredient) ? [...currentList] : [...currentList, ingredient] );
-  if(currentLevel >= maxDepth) {
+const generateRecipes = (currentList, maxDepth, currentLevel = 0) => {
+  const adjustedLists = ingredientInDb.map((ingredient) =>
+    currentList.includes(ingredient)
+      ? [...currentList]
+      : [...currentList, ingredient]
+  );
+  if (currentLevel >= maxDepth) {
     const probability = ingredientsProbability[maxDepth];
-    adjustedLists.forEach(adjustedList => {
-      if(probability > Math.random()) {
-        const recipeNumber = adjustedList.reduce((acc, item) => acc * item,1)
+    adjustedLists.forEach((adjustedList) => {
+      if (probability > Math.random()) {
+        const recipeNumber = adjustedList.reduce((acc, item) => acc * item, 1);
 
-        if(!recipesSums.includes(recipeNumber)) {
-          recipes.push([...adjustedList])
-          recipesSums.push(recipeNumber)
+        if (!recipesSums.includes(recipeNumber)) {
+          recipes.push([...adjustedList]);
+          recipesSums.push(recipeNumber);
         }
       }
-    })
-
+    });
   } else {
-    for(let i = 0;i<adjustedLists.length;i++){
-       generateRecipes([...adjustedLists[i]], maxDepth, currentLevel + 1)
+    for (let i = 0; i < adjustedLists.length; i++) {
+      generateRecipes([...adjustedLists[i]], maxDepth, currentLevel + 1);
     }
   }
-}
+};
 
-generateRecipes([], 3)
-generateRecipes([], 4)
-generateRecipes([], 5)
+generateRecipes([], 3);
+generateRecipes([], 4);
+generateRecipes([], 5);
 
-console.log("RECIPES GENERATED IN "+recipes.length+" AMOUNT");
-let finalContent = `
-TRUNCATE \`recipe_ingredient\`;
-TRUNCATE \`recipes\`;
-`;
-const generateSqlForRecipe = (recipe) => {
-  const recipeNumber = recipe.reduce((acc, item) => acc * item,1)
-  let cuisineId = `${recipeNumber}`.split('').reduce((acc,item) => acc + item, 0);
-  while(cuisineId > 10) {
-    cuisineId = `${cuisineId}`.split("").reduce((acc, item) => acc + Number(item), 0);
+console.log("RECIPES GENERATED IN " + recipes.length + " AMOUNT")
+
+const addRecipeToDatabase = async (recipe) => {
+  const recipeNumber = recipe.reduce((acc, item) => acc * item, 1);
+  let cuisineId = `${recipeNumber}`
+    .split("")
+    .reduce((acc, item) => acc + item, 0);
+  while (cuisineId > 10) {
+    cuisineId = `${cuisineId}`
+      .split("")
+      .reduce((acc, item) => acc + Number(item), 0);
   }
-  finalContent +=`
 
-INSERT INTO \`recipes\` (\`recipeId\`, \`recipeName\`, \`recipeUrl\`, \`cuisineId\`, \`recipeSuggestedTimes\`, \`recipeIngredientsAverageCommonness\`, 
-\`recipeComplexity\`, \`recipeSuggestionScore\`, \`recipeTimeInMinutes\`) 
-VALUES (${recipeNumber}, 'Recipe ${recipeNumber}', 'recipe-${recipeNumber}', '${cuisineId}', '0', NULL, '1', NULL, '1');`
-  recipe.forEach(ingredient => {
-    finalContent+=`
-INSERT INTO \`recipe_ingredient\` (\`recipeIngredientId\`, \`recipeId\`, \`ingredientsInRecipe\`, \`ingredientId\`, \`ingredientAmount\`, \`ingredientUnit\`) 
-VALUES (NULL, '${recipeNumber}','${recipe.length}', '${ingredient}', '${Math.round(Math.random()*1000)}', 'g');`
-  })
-}
-recipes.forEach((recipe,index) => {
-  if(index % 10 === 9){
-    console.log("Recipes from "+(index-9)+" to "+index+" added")
+  const recipeDetails = {
+    recipeName: `Recipe ${recipeNumber}`,
+    recipeUrl: `recipe-${recipeNumber}`,
+    cuisineId,
+    recipeComplexity: 0,
+    recipeTimeInMinutes: 30,
+  };
+
+  const ingredients = recipe.map(ingredientId => ({
+    ingredientAmount: Math.round(Math.random() * 1000),
+    ingredientId,
+    ingredientUnit: 'g'
+  }))
+
+  const recipeId = await insertNewRecipe(recipeDetails, ingredients.length);
+
+  await insertAllRecipeIngredients(ingredients, recipeId);
+  await updateIngredientsCuisineAppearances(cuisineId, ingredients);
+};
+
+(async () => {
+  await executeQuery('TRUNCATE recipes;')
+  await executeQuery('TRUNCATE recipe_ingredient;')
+  await executeQuery('TRUNCATE ingredients_cuisines;')
+  await new Promise(resolve => setTimeout(resolve, 50))
+
+  for(let i = 0; i< recipes.length; i++){
+    if (i % 10 === 9) {
+      console.log("Recipes from " + (i - 9) + " to " + i + " added");
+    }
+    await addRecipeToDatabase(recipes[i]);
+    await validateIngredientCuisines()
+    await new Promise(resolve => setTimeout(resolve, 100))
   }
-  generateSqlForRecipe(recipe);
-});
+  console.log(recipes.length);
+})()
 
-fs.writeFileSync('recipes-sql', finalContent)
-
-
-
-  console.log(recipes.length)
 

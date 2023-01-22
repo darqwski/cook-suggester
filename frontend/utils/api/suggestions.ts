@@ -1,6 +1,6 @@
-import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
 import appRequest from "../app-request";
-import { ISuggestion } from "../../types/suggestion";
+import { ISuggestion } from "../../../types/suggestion";
 
 export const fetchSuggestionsList = async (recipeIngredient: IRecipeIngredient[]): Promise<{
   suggestedRecipes: ISuggestion[]

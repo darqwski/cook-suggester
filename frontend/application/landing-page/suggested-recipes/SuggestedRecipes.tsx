@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ISuggestion } from "../../../types/suggestion";
-import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
+import { ISuggestion } from "../../../../types/suggestion";
+import { IIngredient, IRecipeIngredient } from "../../../../types/ingredients";
 import SuggestedRecipeCard from "./SuggestedRecipeCard";
 import "./suggested-recipes.less";
 import { useCarouselNavigation } from "./useCarouselNavigation";

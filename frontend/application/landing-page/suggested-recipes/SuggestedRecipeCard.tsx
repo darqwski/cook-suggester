@@ -1,20 +1,8 @@
 import React, { useMemo } from "react";
-import { ISuggestion } from "../../../types/suggestion";
-import { CSSTransition } from "react-transition-group";
-import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
-import suggestedRecipes from "./SuggestedRecipes";
+import { ISuggestion } from "../../../../types/suggestion";
+import { IIngredient, IRecipeIngredient } from "../../../../types/ingredients";
 import SuggestedRecipeIngredient from "./SuggestedRecipeIngredient";
 import CirclePercentBar from "../../../components/circle-percent-bar/CirclePercentBar";
-
-export const getCardContainerClassName = (position?: string) => {
-  if (position === "prev") {
-    return "suggestions-story__previous";
-  }
-  if (position === "next") {
-    return "suggestions-story__next";
-  }
-  return "suggestions-story";
-};
 
 export const matchIngredientsWithSuggestion = (
   suggestedRecipe: ISuggestion,
@@ -44,12 +32,6 @@ export const matchIngredientsWithSuggestion = (
     missingIngredients
   }
 };
-
-export const getSuggestionScoreStyles = (suggestionScore: number) => {
-  return {
-
-  }
-}
 
 const SuggestedRecipeCard: React.FC<{
   suggestedRecipe: ISuggestion;

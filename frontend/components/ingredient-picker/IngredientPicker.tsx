@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
 import { fetchBasicIngredientsList } from "../../utils/api/ingredients";
 import WithLabel from "../forms/WitLabel";
 import "./ingredient-picker.less";

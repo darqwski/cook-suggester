@@ -1,5 +1,5 @@
-import { INewRecipe, IRecipe } from "../../types/recipes";
-import { IRecipeIngredient } from "../../types/ingredients";
+import { INewRecipe, IRecipe } from "../../../types/recipes";
+import { IRecipeIngredient } from "../../../types/ingredients";
 import appRequest from "../app-request";
 
 export const createNewRecipe = async ({recipeDetails, ingredients }: {recipeDetails: INewRecipe, ingredients: IRecipeIngredient[] } ) => {

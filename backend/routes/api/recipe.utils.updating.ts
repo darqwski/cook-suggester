@@ -1,6 +1,7 @@
+import { IRecipeIngredient } from "../../../types/ingredients";
 const { executeQuery } = require("../../utils/database-utils");
 
-const checkIfIngredientCuisineExists = async (cuisineId, ingredientId) => {
+const checkIfIngredientCuisineExists = async (cuisineId: number, ingredientId: number): Promise<boolean> => {
   const matchingItems = await executeQuery(
     "SELECT ingredientCuisineId FROM ingredients_cuisines WHERE cuisineId = ? AND ingredientId = ?",
     [cuisineId, ingredientId]
@@ -9,7 +10,7 @@ const checkIfIngredientCuisineExists = async (cuisineId, ingredientId) => {
   return !!matchingItems.length;
 };
 
-const getCurrentRecipesInCuisine = async (cuisineId) => {
+const getCurrentRecipesInCuisine = async (cuisineId: number): Promise<number> => {
   const matchingItems = await executeQuery(
     "SELECT recipesWithIngredient, recipesWithoutIngredient FROM ingredients_cuisines WHERE cuisineId = ?",
     [cuisineId]
@@ -24,16 +25,16 @@ const getCurrentRecipesInCuisine = async (cuisineId) => {
   return recipesWithIngredient + recipesWithoutIngredient;
 };
 
-const updateIngredientCuisineAppearance = async (cuisineId, ingredientId) => {
+const updateIngredientCuisineAppearance = async (cuisineId: number, ingredientId: number): Promise<void> => {
   await executeQuery(
     `UPDATE \`ingredients_cuisines\` SET recipesWithIngredient = recipesWithIngredient + 1 WHERE ingredientId = ? AND cuisineId = ?;`,
     [ingredientId, cuisineId]
   );
 };
 const createNewIngredientCuisineAppearance = async (
-  cuisineId,
-  ingredientId
-) => {
+  cuisineId: number,
+  ingredientId: number
+): Promise<void> => {
   const currentRecipesAmount = await getCurrentRecipesInCuisine(cuisineId)
   await executeQuery(
     `
@@ -44,9 +45,9 @@ VALUES (NULL, ?, ?, ?, ?);`,
 };
 
 const updateCuisineRecipesWithoutIngredients = async (
-  cuisineId,
-  ingredients
-) => {
+  cuisineId: number,
+  ingredients: IRecipeIngredient[]
+): Promise<void> => {
   const ingredientIds = ingredients.map(ingredient => ingredient.ingredientId);
   await executeQuery(
     `UPDATE \`ingredients_cuisines\` SET recipesWithoutIngredient = recipesWithoutIngredient + 1 WHERE ingredientId NOT IN (?) AND cuisineId = ?;`,
@@ -54,7 +55,7 @@ const updateCuisineRecipesWithoutIngredients = async (
   );
 };
 
-const updateIngredientsCuisineAppearances = async (cuisineId, ingredients) => {
+export const updateIngredientsCuisineAppearances = async (cuisineId: number, ingredients: IRecipeIngredient[]):  Promise<void> => {
   console.time(`updating cuisine ${cuisineId} with ingredients ${ingredients.map(({ingredientId}) => ingredientId).join()}`);
   for (let i = 0; i < ingredients.length; i++) {
     const { ingredientId } = ingredients[i];
@@ -72,6 +73,3 @@ const updateIngredientsCuisineAppearances = async (cuisineId, ingredients) => {
   console.timeEnd(`updating cuisine ${cuisineId} with ingredients ${ingredients.map(({ingredientId}) => ingredientId).join()}`);
 };
 
-module.exports = {
-  updateIngredientsCuisineAppearances,
-};

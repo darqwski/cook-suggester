@@ -1,3 +1,4 @@
 /public/scripts/
 /public/materialize.js
-/dist/
+/_dist/
+/node_modules/

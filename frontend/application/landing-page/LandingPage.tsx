@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./landing-page.less";
-import { IIngredient, IRecipeIngredient } from "../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
 import IngredientPicker from "../../components/ingredient-picker/IngredientPicker";
 import { fetchSuggestionsList } from "../../utils/api/suggestions";
 import SuggestedRecipes from "./suggested-recipes/SuggestedRecipes";
-import { ISuggestion } from "../../types/suggestion";
+import { ISuggestion } from "../../../types/suggestion";
 import Loader from "../../components/Loader";
 
 const LandingPage: React.FC = () => {

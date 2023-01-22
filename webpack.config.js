@@ -11,6 +11,7 @@ module.exports = {
         extensions: ['.json', '.js', '.jsx', '.ts', '.tsx'],
         alias: {
             'frontend': path.resolve(__dirname, 'frontend'),
+            '@root': path.resolve(__dirname, './')
         }
     },
     entry: path.resolve(__dirname, 'frontend', 'index.js'),

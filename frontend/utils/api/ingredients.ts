@@ -1,4 +1,4 @@
-import { IIngredient } from "../../../types/ingredients";
+import { IIngredient } from "../../../global-types/ingredients";
 import appRequest from "../app-request";
 
 

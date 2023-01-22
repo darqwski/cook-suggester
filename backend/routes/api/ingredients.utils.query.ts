@@ -1,5 +1,5 @@
 import { executeQuery } from "../../utils/database-utils";
-import { IRawIngredientWithCategory } from "../../../types/ingredients";
+import { IRawIngredientWithCategory } from "../../../global-types/ingredients";
 
 export const queryAllIngredientsWithCategory = async (): Promise<IRawIngredientWithCategory[]> => {
   return executeQuery<IRawIngredientWithCategory>(`

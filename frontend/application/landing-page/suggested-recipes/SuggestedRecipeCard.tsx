@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import { IIngredient, IRecipeIngredient } from "../../../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../../../global-types/ingredients";
 import SuggestedRecipeIngredient from "./SuggestedRecipeIngredient";
 import CirclePercentBar from "../../../components/circle-percent-bar/CirclePercentBar";
-import { ISuggestedRecipe } from "../../../../types/recipes";
+import { ISuggestedRecipe } from "../../../../global-types/recipes";
 
 export const matchIngredientsWithSuggestion = (
   suggestedRecipe: ISuggestedRecipe,

@@ -1,6 +1,4 @@
-import { Request, Response } from "express";
-
-const express = require("express");
+import express, { Request, Response } from "express";
 const router = express.Router();
 
 router.get("/moderator/add-recipe", (req: Request, res: Response) => {

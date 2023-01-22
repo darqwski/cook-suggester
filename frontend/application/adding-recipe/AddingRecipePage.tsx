@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
-import { INewRecipe } from "../../../types/recipes";
+import { IIngredient, IRecipeIngredient } from "../../../global-types/ingredients";
+import { INewRecipe } from "../../../global-types/recipes";
 import FormInput from "../../components/forms/FormInput";
 import IngredientPicker from "../../components/ingredient-picker/IngredientPicker";
 import FormDataManager from "../../context/form-data-manager/FormDataManager";

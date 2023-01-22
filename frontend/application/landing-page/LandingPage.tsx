@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./landing-page.less";
-import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
+import { IIngredient, IRecipeIngredient } from "../../../global-types/ingredients";
 import IngredientPicker from "../../components/ingredient-picker/IngredientPicker";
 import { fetchSuggestionsList } from "../../utils/api/suggestions";
 import SuggestedRecipes from "./suggested-recipes/SuggestedRecipes";
 import Loader from "../../components/Loader";
-import { ISuggestedRecipe } from "../../../types/recipes";
+import { ISuggestedRecipe } from "../../../global-types/recipes";
 
 const LandingPage: React.FC = () => {
   const [selectedIngredients, setSelectedIngredients] = useState<IRecipeIngredient[]>(

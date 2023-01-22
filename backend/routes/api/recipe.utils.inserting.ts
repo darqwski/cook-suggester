@@ -1,6 +1,6 @@
 import { executeQuery, insertQuery } from "../../utils/database-utils";
-import { INewRecipe } from "../../../types/recipes";
-import {  IRecipeIngredient } from "../../../types/ingredients";
+import { INewRecipe } from "../../../global-types/recipes";
+import {  IRecipeIngredient } from "../../../global-types/ingredients";
 
 export const insertNewRecipe = async (recipeDetails: INewRecipe, ingredientsAmount: number): Promise<number> => {
   const { recipeName, recipeUrl, cuisineId, recipeComplexity, recipeTimeInMinutes }  = recipeDetails

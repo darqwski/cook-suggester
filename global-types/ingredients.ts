@@ -17,7 +17,7 @@ export interface IRawIngredientWithCategory
 
 export interface IRecipeIngredient {
   ingredientId: number;
-  recipeId: number;
+  recipeId?: number;
   ingredient?: IIngredient;
   ingredientAmount: number;
   ingredientUnit: string;

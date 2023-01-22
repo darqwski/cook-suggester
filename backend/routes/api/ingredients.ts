@@ -1,6 +1,6 @@
 import { queryAllIngredientsWithCategory } from "./ingredients.utils.query";
 import express, { Request, Response } from "express";
-import { IIngredient } from "../../../types/ingredients";
+import { IIngredient } from "../../../global-types/ingredients";
 const router = express.Router();
 
 router.get("/API/ingredients/", async (req: Request, res: Response) => {

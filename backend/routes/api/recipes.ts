@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { IAddRecipePayload } from "../../../types/adding-recipe";
+import { IAddRecipePayload } from "../../../global-types/adding-recipe";
 import { insertAllRecipeIngredients, insertNewRecipe } from "./recipe.utils.inserting";
 import { updateIngredientsCuisineAppearances } from "./recipe.utils.updating";
 const router = express.Router();

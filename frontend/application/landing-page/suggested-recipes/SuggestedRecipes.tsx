@@ -2,8 +2,8 @@ import React from "react";
 import SuggestedRecipeCard from "./SuggestedRecipeCard";
 import { useCarouselNavigation } from "./useCarouselNavigation";
 import "./suggested-recipes.less";
-import { ISuggestedRecipe } from "../../../../types/recipes";
-import { IIngredient } from "../../../../types/ingredients";
+import { ISuggestedRecipe } from "../../../../global-types/recipes";
+import { IIngredient } from "../../../../global-types/ingredients";
 
 export const getAnimationClass = (
   temporaryIndex: number,

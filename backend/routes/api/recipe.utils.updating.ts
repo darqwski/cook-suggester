@@ -1,4 +1,4 @@
-import { IRecipeIngredient } from "../../../types/ingredients";
+import { IRecipeIngredient } from "../../../global-types/ingredients";
 const { executeQuery } = require("../../utils/database-utils");
 
 const checkIfIngredientCuisineExists = async (cuisineId: number, ingredientId: number): Promise<boolean> => {

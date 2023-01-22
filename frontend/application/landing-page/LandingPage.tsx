@@ -4,15 +4,15 @@ import { IIngredient, IRecipeIngredient } from "../../../types/ingredients";
 import IngredientPicker from "../../components/ingredient-picker/IngredientPicker";
 import { fetchSuggestionsList } from "../../utils/api/suggestions";
 import SuggestedRecipes from "./suggested-recipes/SuggestedRecipes";
-import { ISuggestion } from "../../../types/suggestion";
 import Loader from "../../components/Loader";
+import { ISuggestedRecipe } from "../../../types/recipes";
 
 const LandingPage: React.FC = () => {
   const [selectedIngredients, setSelectedIngredients] = useState<IRecipeIngredient[]>(
     []
   );
   const [isSuggestionsLoading, setSuggestionLoading] = useState(false)
-  const [suggestions, setSuggestions] = useState<ISuggestion[]>([]);
+  const [suggestions, setSuggestions] = useState<ISuggestedRecipe[]>([]);
   const [suggestedIngredients, setSuggestedIngredients] = useState<IIngredient[]>(
     []
   );

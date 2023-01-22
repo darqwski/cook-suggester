@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { ISuggestion } from "../../../../types/suggestion";
-import { IIngredient, IRecipeIngredient } from "../../../../types/ingredients";
+import React from "react";
 import SuggestedRecipeCard from "./SuggestedRecipeCard";
-import "./suggested-recipes.less";
 import { useCarouselNavigation } from "./useCarouselNavigation";
+import "./suggested-recipes.less";
+import { ISuggestedRecipe } from "../../../../types/recipes";
+import { IIngredient } from "../../../../types/ingredients";
 
 export const getAnimationClass = (
   temporaryIndex: number,
@@ -17,8 +17,9 @@ export const getAnimationClass = (
   }
   return " suggestions-story__move-right";
 };
+
 const SuggestedRecipes: React.FC<{
-  suggestions: ISuggestion[];
+  suggestions: ISuggestedRecipe[];
   ingredients: IIngredient[];
 }> = ({ suggestions, ingredients }) => {
   const lastRecipeIndex = suggestions.length;
@@ -53,12 +54,16 @@ const SuggestedRecipes: React.FC<{
           <div className="suggestions-container-arrow" onClick={showPrevRecipe}>
             Prev
           </div>
-        ): <div style={{flexGrow: 1}} />}
+        ) : (
+          <div style={{ flexGrow: 1 }} />
+        )}
         {visibleIndex < lastRecipeIndex ? (
           <div className="suggestions-container-arrow" onClick={showNextRecipe}>
             Next
           </div>
-        ) : <div style={{flexGrow: 1}} />}
+        ) : (
+          <div style={{ flexGrow: 1 }} />
+        )}
       </div>
     </>
   );

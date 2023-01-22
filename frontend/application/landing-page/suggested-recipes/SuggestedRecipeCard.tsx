@@ -1,11 +1,11 @@
 import React, { useMemo } from "react";
-import { ISuggestion } from "../../../../types/suggestion";
 import { IIngredient, IRecipeIngredient } from "../../../../types/ingredients";
 import SuggestedRecipeIngredient from "./SuggestedRecipeIngredient";
 import CirclePercentBar from "../../../components/circle-percent-bar/CirclePercentBar";
+import { ISuggestedRecipe } from "../../../../types/recipes";
 
 export const matchIngredientsWithSuggestion = (
-  suggestedRecipe: ISuggestion,
+  suggestedRecipe: ISuggestedRecipe,
   ingredients: IIngredient[]
 ) => {
   const matchingIngredients: IRecipeIngredient[] =
@@ -34,11 +34,11 @@ export const matchIngredientsWithSuggestion = (
 };
 
 const SuggestedRecipeCard: React.FC<{
-  suggestedRecipe: ISuggestion;
+  suggestedRecipe: ISuggestedRecipe;
   className: string;
   ingredients?: IIngredient[];
 }> = ({ suggestedRecipe, ingredients = [], className }) => {
-  const suggestedRecipeWithIngredients: ISuggestion = useMemo(
+  const suggestedRecipeWithIngredients: ISuggestedRecipe = useMemo(
     () => matchIngredientsWithSuggestion(suggestedRecipe, ingredients),
     [suggestedRecipe, ingredients]
   );

@@ -1,3 +1,5 @@
+import { IRecipeIngredient } from "./ingredients";
+
 export interface IRecipe {
   recipeId: number;
   recipeName: string;
@@ -12,3 +14,12 @@ export interface IRecipe {
 }
 
 export interface INewRecipe extends Omit<IRecipe, 'recipeId' | 'recipeCommonnessInCuisine'> {}
+
+export interface IRecipeWithExtraIngredients extends IRecipe {
+  missingIngredients: IRecipeIngredient[];
+  matchingIngredients: IRecipeIngredient[];
+}
+
+export interface ISuggestedRecipe extends IRecipeWithExtraIngredients {
+  suggestionScore: number;
+}

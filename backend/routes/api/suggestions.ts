@@ -16,9 +16,6 @@ const router = express.Router();
 
 //TODO
 // add index for ingredientId in recipe_ingredient
-//TODO
-// update commonness in ingredients
-// update recipeSuggestedTimes in recipe
 
 router.post("/API/suggestions/", async (req: Request, res: Response) => {
   const selectedIngredients = req.body as ISuggestingRecipesPayload;

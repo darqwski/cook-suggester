@@ -1,0 +1,38 @@
+@import "frontend/css/variables.less";
+
+.filters-list {
+  display: flex;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.filter-item {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  max-width: 10rem;
+  margin: 0.5rem;
+  background: white;
+  box-shadow: @boxShadow1;
+  &--selected {
+    box-shadow: @boxShadow2;
+    border: 3px solid #0f9d58;
+    &:hover {
+      box-shadow: @boxShadow1;
+    }
+  }
+  &:hover {
+    box-shadow: @boxShadow2;
+  }
+
+  &__image {
+
+  }
+  &__no-image {
+
+  }
+  &__name {
+
+  }
+}

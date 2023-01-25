@@ -3,13 +3,13 @@ import { IFilter } from "../../../global-types/filters";
 
 export const queryFilters = (): Promise<IFilter[]> => {
   return executeQuery<IFilter>(
-    "SELECT tags.filterId, tags.filterName, tags.filterDescription, tags.filterType FROM tags"
+    "SELECT filters.filterId, filters.filterName, filters.filterDescription, filters.filterType FROM filters"
   );
 };
 export const queryFiltersWithFilterValues =async (): Promise<IFilter[]> => {
   const filtersWithRawFilterValues = await executeQuery<IFilter & { filterValue: string}>(
     `
-    SELECT tags.filterId, tags.filterName, tags.filterDescription, tags.filterType, filter_values.value as filterValue
+    SELECT filters.filterId, filters.filterName, filters.filterDescription, filters.filterType, filter_values.value as filterValue
     FROM filters INNER JOIN filter_values ON filter_values.filterId = filters.filterId`
   );
 

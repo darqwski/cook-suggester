@@ -5,4 +5,5 @@ export default [
   './api/suggestions',
   './api/ingredients',
   './api/tags',
+  './api/filters',
 ]

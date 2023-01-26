@@ -7,6 +7,7 @@ import SuggestedRecipes from "./suggested-recipes/SuggestedRecipes";
 import Loader from "../../components/Loader";
 import { ISuggestedRecipe } from "../../../global-types/recipes";
 import FilterSelector from "./filter-selector/FilterSelector";
+import { IFilter } from "../../../global-types/filters";
 
 const LandingPage: React.FC = () => {
   const [selectedIngredients, setSelectedIngredients] = useState<IRecipeIngredient[]>(
@@ -17,10 +18,12 @@ const LandingPage: React.FC = () => {
   const [suggestedIngredients, setSuggestedIngredients] = useState<IIngredient[]>(
     []
   );
+  const [selectedFilters, setSelectFilters] = useState<IFilter[]>([]);
+
 
   const fetchSuggestions = async () => {
     setSuggestionLoading(true)
-   const data = await fetchSuggestionsList(selectedIngredients);
+   const data = await fetchSuggestionsList({ recipeIngredients: selectedIngredients, filters: selectedFilters });
     setSuggestions(data.suggestedRecipes);
     setSuggestedIngredients(data.ingredients)
     setSuggestionLoading(false)
@@ -38,7 +41,7 @@ const LandingPage: React.FC = () => {
         <a href="/moderator/add-recipe/">Adding recipe</a>
       </div>
       <p>Select optional filters: </p>
-      <FilterSelector />
+      <FilterSelector onChange={setSelectFilters} />
       <p>Please add ingredients: </p>
 
       {isSuggestionsVisible && <SuggestedRecipes suggestions={suggestions} ingredients={suggestedIngredients} />}

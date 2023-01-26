@@ -11,17 +11,82 @@ import {
   ISuggestedRecipe,
 } from "../../../global-types/recipes";
 import { AMOUNT_OF_SUGGESTED_RECIPES_FOR_BASIC_USER } from "../../../global-constants/suggesting-recipes";
+import { IFilter } from "../../../global-types/filters";
+import {
+  ingredientsExample
+} from "../../../frontend/application/landing-page/suggested-recipes/suggested-recipe.example";
 
 const router = express.Router();
 
 //TODO
 // add index for ingredientId in recipe_ingredient
 
+const recipeContainsExcludedIngredients = (excludedIngredientIds: string[], recipe: ISuggestedRecipe): boolean => {
+  for( const missingIngredient of recipe.missingIngredients){
+    if(excludedIngredientIds.includes(`${missingIngredient.ingredientId}`)){
+      return true;
+    }
+  }
+  for( const matchingIngredient of recipe.matchingIngredients){
+    if(excludedIngredientIds.includes(`${matchingIngredient.ingredientId}`)){
+      return true;
+    }
+  }
+
+  return false
+}
+const recipeContainsIncludedIngredients = (includedIngredientIds: string[], recipe: ISuggestedRecipe): boolean => {
+  const amountOfIncludedIngredients = includedIngredientIds.reduce((acc, includedIngredientId)=> {
+    if(recipe.matchingIngredients.some(ingredient => `${ingredient.ingredientId}` === `${includedIngredientId}`)){
+      return acc + 1;
+    }
+    if(recipe.missingIngredients.some(ingredient => `${ingredient.ingredientId}` === `${includedIngredientId}`)){
+      return acc + 1;
+    }
+
+    return acc;
+  }, 0)
+
+  return amountOfIncludedIngredients === includedIngredientIds.length;
+}
+
+//TODO it would be better if this filters were applied in database
+const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[]): ISuggestedRecipe[] => {
+  return recipes.filter((recipe) => {
+    for(const filter of filters){
+      if(filter.filterType === 'exclude-ingredients'){
+        const containsExcludedIngredients = recipeContainsExcludedIngredients(filter.filterValues as string[], recipe);
+        if(containsExcludedIngredients){
+          return false;
+        }
+      }
+
+      //Hard to test
+      if(filter.filterType === 'include-ingredients'){
+        const containsAllIncludedIngredients = recipeContainsIncludedIngredients(filter.filterValues as string[], recipe);
+        if(!containsAllIncludedIngredients){
+          return false;
+        }
+      }
+    }
+
+    return true;
+  })
+}
+
 router.post("/API/suggestions/", async (req: Request, res: Response) => {
-  const selectedIngredients = req.body as ISuggestingRecipesPayload;
-  const selectedIngredientIds = selectedIngredients.map(
+  const { recipeIngredients, filters = [] } = req.body as ISuggestingRecipesPayload;
+  const selectedIngredientIds = recipeIngredients.map(
     ({ ingredientId }) => ingredientId
   );
+  const filterIds = filters.map(({filterId}) => filterId)
+  const filterValues = filterIds.length ? await executeQuery<{ filterId: string, value: string | number }>('SELECT filterId, value FROM filter_values WHERE filterId IN (?)', [filterIds]) : []
+  const filtersWithValues = filters.map(filter => {
+    return {
+      ...filter,
+      filterValues: filterValues.filter(filterValue => `${filterValue.filterId}` === `${filter.filterId}`).map(({ value }) => value)
+    }
+  });
 
   console.time("querying recipe_ingredient by ingredients from user");
   const mostMatchingRecipesForIngredients = await executeQuery<
@@ -46,7 +111,7 @@ router.post("/API/suggestions/", async (req: Request, res: Response) => {
   const mostMatchingRecipesInformation = await executeQuery<IRecipe>(
     `
         SELECT * FROM \`recipes\`
-        WHERE recipeId IN (?);
+        WHERE recipeId IN (?)
     `,
     [mostMatchingRecipesIds]
   );
@@ -114,7 +179,13 @@ router.post("/API/suggestions/", async (req: Request, res: Response) => {
       (recipe.matchingIngredients.length + recipe.missingIngredients.length),
   }));
 
-  const sortedRecipes = recipesWithCalculatedFields.sort(
+  console.log("Recipes before filtering: "+recipesWithCalculatedFields.length)
+  console.time('filtering')
+  const filteredRecipes = filterOutRecipes(recipesWithCalculatedFields, filtersWithValues)
+  console.timeEnd('filtering')
+  console.log("Recipes after filtering: "+filteredRecipes.length)
+
+  const sortedRecipes = filteredRecipes.sort(
     (recipeA, recipeB) => recipeB.suggestionScore - recipeA.suggestionScore
   );
   const topSortedRecipes = sortedRecipes.filter((recipe, index) => index < AMOUNT_OF_SUGGESTED_RECIPES_FOR_BASIC_USER);

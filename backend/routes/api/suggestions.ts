@@ -51,6 +51,10 @@ const recipeContainsTag = (recipe: ISuggestedRecipe, tagId: string) => {
   return recipe.tags?.some(tag => `${tag}` === tagId)
 }
 
+const recipeIsInCuisine = (recipe: ISuggestedRecipe, cuisineId: string) => {
+  return `${recipe.cuisineId}` === cuisineId
+}
+
 //TODO it would be better if this filters were applied in database
 const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[]): ISuggestedRecipe[] => {
   return recipes.filter((recipe) => {
@@ -79,6 +83,20 @@ const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[]): ISugg
 
       if(filter.filterType === 'exclude-tag') {
         const containsTag = recipeContainsTag(recipe, `${filter.filterValues?.[0]}`)
+        if(containsTag) {
+          return false
+        }
+      }
+
+      if(filter.filterType === 'include-cuisine') {
+        const containsTag = recipeIsInCuisine(recipe, `${filter.filterValues?.[0]}`)
+        if(!containsTag) {
+          return false
+        }
+      }
+
+      if(filter.filterType === 'exclude-cuisine') {
+        const containsTag = recipeIsInCuisine(recipe, `${filter.filterValues?.[0]}`)
         if(containsTag) {
           return false
         }

@@ -40,7 +40,10 @@ const recipeIsInCuisine = (recipe: ISuggestedRecipe, cuisineId: string) => {
 
 //TODO it would be better if this filters were applied in database
 export const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[]): ISuggestedRecipe[] => {
-  return recipes.filter((recipe) => {
+  console.log("Recipes before filtering: "+recipes.length)
+  console.time('filtering')
+
+  const filteredRecipes = recipes.filter((recipe) => {
     for(const filter of filters){
       if(filter.filterType === 'exclude-ingredients'){
         const containsExcludedIngredients = recipeContainsExcludedIngredients(filter.filterValues as string[], recipe);
@@ -87,5 +90,9 @@ export const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[])
     }
 
     return true;
-  })
+  });
+  console.log("Recipes after filtering: "+filteredRecipes.length)
+  console.timeEnd('filtering')
+
+  return filteredRecipes;
 }

@@ -11,6 +11,7 @@ export interface IRecipe {
   recipeCommonnessInCuisine: number;
   recipeSuggestionScore?: number;
   recipeTimeInMinutes: number;
+  tags?: number[]
 }
 
 export interface INewRecipe extends Omit<IRecipe, 'recipeId' | 'recipeCommonnessInCuisine'> {}

@@ -12,9 +12,6 @@ import {
 } from "../../../global-types/recipes";
 import { AMOUNT_OF_SUGGESTED_RECIPES_FOR_BASIC_USER } from "../../../global-constants/suggesting-recipes";
 import { IFilter } from "../../../global-types/filters";
-import {
-  ingredientsExample
-} from "../../../frontend/application/landing-page/suggested-recipes/suggested-recipe.example";
 
 const router = express.Router();
 
@@ -50,6 +47,10 @@ const recipeContainsIncludedIngredients = (includedIngredientIds: string[], reci
   return amountOfIncludedIngredients === includedIngredientIds.length;
 }
 
+const recipeContainsTag = (recipe: ISuggestedRecipe, tagId: string) => {
+  return recipe.tags?.some(tag => `${tag}` === tagId)
+}
+
 //TODO it would be better if this filters were applied in database
 const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[]): ISuggestedRecipe[] => {
   return recipes.filter((recipe) => {
@@ -66,6 +67,20 @@ const filterOutRecipes = (recipes:ISuggestedRecipe[], filters: IFilter[]): ISugg
         const containsAllIncludedIngredients = recipeContainsIncludedIngredients(filter.filterValues as string[], recipe);
         if(!containsAllIncludedIngredients){
           return false;
+        }
+      }
+
+      if(filter.filterType === 'include-tag') {
+        const containsTag = recipeContainsTag(recipe, `${filter.filterValues?.[0]}`)
+        if(!containsTag) {
+          return false
+        }
+      }
+
+      if(filter.filterType === 'exclude-tag') {
+        const containsTag = recipeContainsTag(recipe, `${filter.filterValues?.[0]}`)
+        if(containsTag) {
+          return false
         }
       }
     }
@@ -108,13 +123,39 @@ router.post("/API/suggestions/", async (req: Request, res: Response) => {
   );
   console.time("querying recipes information");
 
-  const mostMatchingRecipesInformation = await executeQuery<IRecipe>(
+  const mostMatchingRecipesInformationWithTags = await executeQuery<IRecipe & { tagId: number | null }>(
     `
-        SELECT * FROM \`recipes\`
-        WHERE recipeId IN (?)
+        SELECT recipes.*, tags_recipes.tagId, recipes.recipeId FROM \`recipes\`
+        LEFT JOIN tags_recipes ON tags_recipes.recipeId = recipes.recipeId
+        WHERE recipes.recipeId IN (?)
     `,
     [mostMatchingRecipesIds]
   );
+
+  const mostMatchingRecipesInformation  = Object.values(
+    mostMatchingRecipesInformationWithTags.reduce<Record<number, IRecipe>>((acc, recipeWithTag) => {
+      if(!recipeWithTag.tagId){
+        return {
+          ...acc,
+          [recipeWithTag.recipeId]: recipeWithTag
+        }
+      }
+      if(!acc[recipeWithTag.recipeId]){
+      return {
+        ...acc,
+        [recipeWithTag.recipeId]: { ...recipeWithTag, tags: [recipeWithTag.tagId] },
+      }
+    }
+
+    return {
+      ...acc,
+      [recipeWithTag.recipeId]: {
+        ...acc[recipeWithTag.recipeId],
+        tags: [...(acc[recipeWithTag.recipeId].tags || []), recipeWithTag.tagId ]
+      }
+    }
+  }, {}));
+
   console.timeEnd("querying recipes information");
 
   console.time("querying missing ingredients");

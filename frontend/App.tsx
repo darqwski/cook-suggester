@@ -6,6 +6,8 @@ import './css/variables.less'
 import LandingPage from "./application/landing-page/LandingPage";
 import AddingRecipePage from "./application/adding-recipe/AddingRecipePage";
 import LoginPage from "./application/login/LoginPage";
+import ApplicationContextManager from "./context/application-context-manager/ApplicationContextManager";
+import NavigationBar from "./components/navigation-bar/NavigationBar";
 
 const routing = [
     { path: '/', component: LandingPage },
@@ -15,6 +17,8 @@ const routing = [
 
 const App = () => {
     return (
+      <>
+        <NavigationBar />
         <Router forceRefresh>
             {routing.map(({ path, component }, index) => (
                 <Route
@@ -25,11 +29,15 @@ const App = () => {
                 />
             ))}
         </Router>
+      </>
     )
 }
 
 const AppWithContext = () => (
-  <App />
+  <ApplicationContextManager>
+      <App />
+  </ApplicationContextManager>
+
 )
 
 export default AppWithContext

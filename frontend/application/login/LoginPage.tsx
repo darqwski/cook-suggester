@@ -14,6 +14,7 @@ const LoginPage = () => {
 
     if(status === 200){
       console.log("Logged in")
+      location.href = '../'
     } else {
       console.log(message)
     }

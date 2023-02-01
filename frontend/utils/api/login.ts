@@ -9,3 +9,9 @@ export const loginUser =async (login: string, password: string): Promise<[number
 
   return [status, data];
 }
+export const logoutUser =async (): Promise<void> => {
+  await appRequest<string>({
+    url:'/API/logout',
+    method: 'POST',
+  });
+}

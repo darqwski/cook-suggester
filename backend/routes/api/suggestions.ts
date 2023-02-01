@@ -4,15 +4,6 @@ import {
   ISuggestionRecipesResponse,
 } from "../../../global-types/suggesting-recipes";
 import { executeQuery } from "../../utils/database-utils";
-import {
-  IIngredient,
-  IRecipeIngredient,
-} from "../../../global-types/ingredients";
-import {
-  IRecipe,
-  IRecipeWithExtraIngredients,
-  ISuggestedRecipe,
-} from "../../../global-types/recipes";
 import { AMOUNT_OF_SUGGESTED_RECIPES_FOR_BASIC_USER } from "../../../global-constants/suggesting-recipes";
 import { filterOutRecipes } from "./suggestions.filtering";
 import {

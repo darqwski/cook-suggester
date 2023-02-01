@@ -3,7 +3,7 @@ import { provideDataToRender } from "../../utils/rendering-utils";
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
+router.get('/login', (req: Request, res: Response) => {
     res.render('index', provideDataToRender(req));
 });
 

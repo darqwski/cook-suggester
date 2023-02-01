@@ -2,13 +2,12 @@ import http from "http";
 import { onApplicationError, onServerError } from "./utils/server-handlers";
 import serverConfiguration from "./server-config.json";
 import express from "express";
-// @ts-ignore
 import createError from "http-errors";
 import path from "path";
-// @ts-ignore
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-
+const session = require("express-session");
+import { secret } from './secrets.json'
 const app = express();
 
 const routes = require("./routes/");
@@ -18,12 +17,23 @@ app.set("views", path.join(__dirname, "../../public"));
 app.set("view engine", "ejs");
 
 app.use(bodyParser.json());
+
+app.use(session({
+  secret,
+  saveUninitialized:true,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 },
+  resave: false
+}));
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
 app.use("/", routes);
+
+
+
 app.use(cookieParser("SecretKey"));
 
 app.use(express.static(path.join(__dirname, "../../public")));

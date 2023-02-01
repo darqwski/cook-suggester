@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import { HTMLProps, ReactElement } from "react";
 
-export interface IFormInput {
+export interface IFormInput extends HTMLProps<HTMLInputElement>{
   label: string;
   name: string;
   white?: boolean;

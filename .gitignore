@@ -2,3 +2,4 @@
 /public/materialize.js
 /_dist/
 /node_modules/
+/backend/secrets.json
